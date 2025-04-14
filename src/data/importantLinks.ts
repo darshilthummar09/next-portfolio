@@ -31,13 +31,7 @@
       url: Strings.facebookLink,
       icon: Strings.facebookIcon,
       text: Strings.facebookUsername,
-    },
-    {
-      name: Strings.whatsapp,
-      url: Strings.primarywhatsappLink,
-      icon: Strings.whatsappIcon,
-      text: Strings.primarywhatsapp,
-    },
+    }
   ];
   
   export default socialLinks;
