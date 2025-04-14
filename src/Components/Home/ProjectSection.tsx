@@ -12,7 +12,7 @@
 //     >
 //       <ConstrainedBox classNames="p-4 py-16">
 //         <SectionTitle>Projects/Recent Works</SectionTitle>
-
+//
 //         <ProjectCard projects={projects} />
 //       </ConstrainedBox>
 //     </ResponsiveBox>
