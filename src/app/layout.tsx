@@ -31,6 +31,26 @@ export const metadata: Metadata = {
     'Frontend Developer',
     'Backend Developer',
     'JavaScript Developer',
+    'MongoDB Developer',
+    'Express.js Developer',
+    'React.js Developer',
+    'Node.js Expert',
+    'MERN Stack Portfolio',
+    'Web Development Portfolio',
+    'Darshil Thummar Portfolio',
+    'Modern Web Development',
+    'JavaScript Expert',
+    'Frontend Development',
+    'Backend Development',
+    'Full Stack Portfolio',
+    'Scalable Web Apps',
+    'Dynamic Web Applications',
+    'DarshilThummar',
+    'darshilthummar',
+    'MERN Stack Projects',
+    'Web Developer Portfolio',
+    'React and Node.js Developer',
+    'MERN Stack Expert',
   ],
   openGraph: {
     title: 'Darshil Thummar | MERN Stack Developer Portfolio',
@@ -54,12 +74,12 @@ export const metadata: Metadata = {
     title: 'Darshil Thummar | MERN Stack Developer Portfolio',
     description:
       'Explore projects, skills, and work experience of Darshil Thummar, a skilled MERN Stack Developer.',
-    images: ['https://yourdomain.com/og-image.jpg'], // Replace with your actual image
+    images: ['https://media.licdn.com/dms/image/v2/D4D03AQHjJaYuDImKvQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1680426267263?e=2147483647&v=beta&t=_-UqP7zh9VyYiBOO-2oZQb5Auztu1KIobgUIwkj8ZYM'], // Replace with your actual image
   },
   icons: {
     icon: '/favicon.ico',
   },
-}
+};
 
 export default function RootLayout({
   children,
@@ -72,16 +92,33 @@ export default function RootLayout({
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="google-site-verification" content="0IXFzYG-G9iwXixbQXFVanLLZdN0y2CPTZ-5qZbu-Zc" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="./favicon.ico" />
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+                const favicon = document.getElementById('dynamic-favicon');
+                if (/android/i.test(userAgent)) {
+                  favicon.href = './android-chrome-192x192.png';
+                } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                  favicon.href = '/apple-touch-icon.png';
+                } else {
+                  favicon.href = '/favicon.ico';
+                }
+              })();
+            `,
+          }}
         />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="lg:px-40">{children}</div>
+        <div className="lg:px-10">{children}</div>
         <Header className="app_nav" navItems={navMenus} />
         <Footer />
         <ScrollToTop />

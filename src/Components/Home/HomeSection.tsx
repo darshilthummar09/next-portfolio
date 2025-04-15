@@ -1,10 +1,10 @@
-import Link from 'next/link'
-import Column from '../core/Column'
-import ConstrainedBox from '../core/constrained-box'
-import ResponsiveBox from '../core/ResponsiveBox'
-import Row from '../core/Row'
-import socialLinks from '../../data/importantLinks'
-import { NameAnimation } from '../common/nameAnimation'
+import Link from "next/link";
+import Column from "../core/Column";
+import ConstrainedBox from "../core/constrained-box";
+import ResponsiveBox from "../core/ResponsiveBox";
+import Row from "../core/Row";
+import socialLinks from "../../data/importantLinks";
+import { NameAnimation } from "../common/nameAnimation";
 
 const HomeSection = ({ id }: Readonly<{ id: string }>) => {
   return (
@@ -19,16 +19,19 @@ const HomeSection = ({ id }: Readonly<{ id: string }>) => {
               Hi there, I am
             </p>
             <NameAnimation
-              words={['Darshil Thummar.', '@darshilthummar_.']}
+              words={["Darshil Thummar.", "@darshilthummar_."]}
               className="text-1xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-center text-[var(--primaryColor)] dark:text-[var(--primaryColor)]"
             />
           </div>
           <p className="text-sm md:text-base text-[var(--textColorLight)] dark:text-[var(--textColorLight)] mx-auto">
             Full Stack Developer 💻 SDE 🛠️ Open Source 🌍
           </p>
+          <p className="text-sm mt-5 md:text-base text-[var(--textColorLight)] dark:text-[var(--textColorLight)] mx-auto">
+            Co-founder - Nexor ⚜️
+          </p>
         </Column>
 
-        <div className="mt-12 lg:mt-16 w-full flex flex-col items-center">
+        <div className="mt-20 lg:mt-16 w-full flex flex-col items-center">
           <p className="text-base font-medium pb-3">Follow me here</p>
 
           <Row classNames="mt-2 gap-4 md:gap-6">
@@ -43,25 +46,13 @@ const HomeSection = ({ id }: Readonly<{ id: string }>) => {
                 >
                   <i className={link.icon} />
                 </Link>
-              )
+              );
             })}
           </Row>
         </div>
-
-        {/* Centered Down Button */}
-        {/* <div className="mx-auto lg:mt-120 mt-65">
-          <Link href="#about" className="btn btn-lg" id="about">
-            <img
-              src="/images/down.gif"
-              alt="down"
-              height={40}
-              width={40}
-            />
-          </Link>
-        </div> */}
       </ConstrainedBox>
     </ResponsiveBox>
-  )
-}
+  );
+};
 
-export default HomeSection
+export default HomeSection;

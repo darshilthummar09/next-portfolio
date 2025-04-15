@@ -2,7 +2,7 @@ import { TimelineEntry } from "@/interfaces";
 
 const educations: TimelineEntry[] = [
   {
-    degree: "Mastwr of Computer Application",
+    degree: "Master of Computer Application",
     educations: [
       {
         institute: "Department of computer science, VNSGU",
@@ -32,7 +32,7 @@ const educations: TimelineEntry[] = [
         institute: "JB & KARP VIDYA SANKUL - LASKANA",
         startDate: "2018-19",
         location: "Surat, Gujarat, India",
-        cgpa: "64.33 %",
+        percentage: "64.33%",
       },
     ],
   },
@@ -43,7 +43,7 @@ const educations: TimelineEntry[] = [
         institute: "JB & KARP VIDYA SANKUL - LASKANA",
         startDate: "2016-17",
         location: "Surat, Gujarat, India",
-        cgpa: " 72 %",
+        percentage: " 72%",
       },
     ],
   },

@@ -33,7 +33,7 @@ const FloatingNavbar = ({
         )}
       >
         <Row classNames="w-full justify-center items-center">
-          <Row classNames="gap-4 items-center">
+          <Row classNames="gap-10 items-center">
             {navItems.map((navItem: INavItem, idx: number) => (
               <Link
                 key={`link=${idx}`}
