@@ -27,7 +27,7 @@ const HomeSection = ({ id }: Readonly<{ id: string }>) => {
             Full Stack Developer 💻 SDE 🛠️ Open Source 🌍
           </p>
           <p className="text-sm mt-5 md:text-base text-[var(--textColorLight)] dark:text-[var(--textColorLight)] mx-auto">
-            Co-founder - Nexor ⚜️
+            Co-founder - Appex ⚜️
           </p>
         </Column>
 
