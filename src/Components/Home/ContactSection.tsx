@@ -1,18 +1,18 @@
-import ResponsiveBox from "../../Components/core/ResponsiveBox";
-import ConstrainedBox from "../../Components/core/constrained-box";
-import GridBox from "../../Components/core/GridBox";
-import Column from "../../Components/core/Column";
-import SectionTitle from "../../Components/common/SectionTitle";
+import ResponsiveBox from "../core/ResponsiveBox";
+import ConstrainedBox from "../core/constrained-box";
+import GridBox from "../core/GridBox";
+import Column from "../core/Column";
+import SectionTitle from "../common/SectionTitle";
 import ContactButton from "../UI/ContactButton";
 import socialLinks from "../../data/importantLinks";
 
 const HomeSection6 = ({ id }: { id: string }) => {
   return (
     <ResponsiveBox
-      classNames="dark:bg-[var(--dialogColor)] bg-[var(--dialogColor)] min-h-screen items-center justify-center dark:bg-dot-white/[0.15] bg-dot-white/[0.15] items-center justify-center"
+      classNames="dark:bg-[var(--dialogColor)] bg-[var(--dialogColor)] min-h-screen items-center justify-center dark:bg-dot-white/[0.15] bg-dot-white/[0.15] items-center justify-center lg:px-40"
       id={id}
     >
-      <ConstrainedBox classNames="p-4 py-16">
+      <ConstrainedBox classNames="px-4 py-16">
         <SectionTitle>Get in Touch</SectionTitle>
 
         <Column classNames="mt-16 w-full">
@@ -24,7 +24,7 @@ const HomeSection6 = ({ id }: { id: string }) => {
                   text={link.text}
                   icon={link.icon}
                   url={link.url}
-                  className="flex items-center gap-x-2 p-4 border rounded text-xl"
+                  className="flex items-center gap-x-2 p-4 border border-zinc-500 rounded text-xl hover:bg-white hover:text-[var(--primaryColor)] transition duration-300"
                 />
               );
             })}

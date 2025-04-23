@@ -1,4 +1,4 @@
 User-Agent: *
 Allow: /
 
-Sitemap: https://utkarsh-sorathia.vercel.app/sitemap.xml
+Sitemap: https://darshilthummar.vercel.app/sitemap.xml
