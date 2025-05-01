@@ -35,9 +35,9 @@ const HomeSection = ({ id }: Readonly<{ id: string }>) => {
           <p className="text-sm md:text-base text-[var(--textColorLight)] dark:text-[var(--textColorLight)] mx-auto">
             Full Stack Developer 💻 SDE 🛠️ Open Source 🌍
           </p>
-          <p className="text-sm mt-5 md:text-base text-[var(--textColorLight)] dark:text-[var(--textColorLight)] mx-auto">
+          {/* <p className="text-sm mt-5 md:text-base text-[var(--textColorLight)] dark:text-[var(--textColorLight)] mx-auto">
             Co-founder - Appex ⚜️
-          </p>
+          </p> */}
         </Column>
 
         <div className="mt-12 lg:mt-16 w-full flex flex-col items-center">

@@ -17,6 +17,11 @@ export const navMenus: INavItem[] = [
     icon: "bi bi-briefcase-fill",
   },
   {
+    name: "Experiences",
+    link: "/#experiences",
+    icon: "bi bi-clock-history", // Replace with a valid icon
+  },
+  {
     name: "Skills",
     link: "/#skills",
     icon: "bi bi-award-fill",

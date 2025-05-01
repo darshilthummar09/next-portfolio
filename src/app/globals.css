@@ -3,7 +3,20 @@
 :root {
   --background: url(/images/dark-mode.gif), #121212;  /* Permanent dark mode background */
   --foreground: #ededed;  /* Light text for dark background */
-  --primaryColor: #4361ee;
+  --primaryColor5: rgba(0, 177, 113, .05);
+    --primaryColor10: rgba(0, 177, 113, .1);
+    --primaryColor20: rgba(0, 177, 113, .2);
+    --primaryColor30: rgba(0, 177, 113, .3);
+    --primaryColor40: rgba(0, 177, 113, .4);
+    --primaryColor50: rgba(0, 177, 113, .5);
+    --primaryColor60: rgba(0, 177, 113, .6);
+    --primaryColor70: rgba(0, 177, 113, .7);
+    --primaryColor80: rgba(0, 177, 113, .8);
+    --primaryColor90: rgba(0, 177, 113, .9);
+    --primaryColor100: #00b171;
+    --primaryColor: #00b171;
+    --bgColor70: hsla(0, 0%, 55%, 0.7);
+    --bgColor100: hsla(0, 0%, 55%, 0.7);
 }
 
 @theme inline {

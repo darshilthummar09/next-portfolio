@@ -24,16 +24,16 @@ export interface INavItem {
 //   cgpa: number;
 // }
 
-// export interface IExperienceItem {
-//   designation: string;
-//   company: string;
-//   startDate: string;
-//   endDate?: string;
-//   isCurrentJob: boolean;
-//   location: string;
-//   shortDescription?: string;
-//   description: string[];
-// }
+export interface IExperienceItem {
+  designation: string;
+  company: string;
+  startDate: string;
+  endDate?: string;
+  isCurrentJob: boolean;
+  location: string;
+  shortDescription?: string;
+  description: string[];
+}
 
 export enum RepoType {
   Public,
