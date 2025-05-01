@@ -8,10 +8,11 @@ import SectionTitle from "../common/SectionTitle";
 import education from "../../data/education";
 import Education from "../UI/Education";
 import Image from "next/image";
+import Head from "next/head";
 
 const techStack = [
   { name: "MongoDB", icon: "/skills/mongodb.svg" },
-  { name: "Express", icon: "./skills/express.svg" },
+  { name: "Express", icon: "/skills/express.svg" },
   { name: "React", icon: "/skills/react.svg" },
   { name: "Node.js", icon: "/skills/nodejs.svg" },
   { name: "TypeScript", icon: "/skills/typescript.svg" },
@@ -20,146 +21,184 @@ const techStack = [
 
 const AboutSection = ({ id }: { id: string }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const toggleModal = () => {
-    setIsModalOpen(!isModalOpen);
-  };
+  const toggleModal = () => setIsModalOpen(!isModalOpen);
 
   return (
-    <ResponsiveBox
-      classNames="dark:bg-[var(--bgColor)] bg-[var(--bgColor)] dark:bg-grid-white/[0.1] bg-grid-white/[0.1] items-center justify-center lg:px-40"
-      id={id}
-    >
-      <ConstrainedBox classNames="py-16">
-        <SectionTitle>About me</SectionTitle>
-        <div className="w-full flex flex-col md:flex-row justify-between gap-8">
-          <div className="flex-1 p-6 flex flex-col gap-8 my-auto">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ amount: 0.3 }}
-              transition={{ duration: 0.6 }}
-              className="flex items-center gap-6"
-            >
-              <div
-                className="relative w-28 h-28 rounded-full overflow-hidden border-4 border-[var(--primaryColor)] cursor-pointer"
-                onClick={toggleModal}
-              >
-                <Image
-                  src="/darshilthummar.JPG"
-                  alt="Darshil Thummar"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold text-[var(--primaryColor)] mb-1">
-                  Darshil Thummar
-                </h3>
-                <p className="text-lg text-white">
-                  Full Stack Developer <br />
-                  <span className="text-base text-white">
-                    MERN | Next.js | Typescript
-                  </span>
-                </p>
-              </div>
-            </motion.div>
+    <>
+      <Head>
+        <title>Darshil Thummar | Full Stack MERN Developer</title>
+        <meta
+          name="description"
+          content="Darshil Thummar is a Full Stack Developer specializing in the MERN stack, Next.js, and TypeScript. Passionate about building scalable web applications."
+        />
+        <meta property="og:title" content="Darshil Thummar | Full Stack Developer" />
+        <meta
+          property="og:description"
+          content="Explore Darshil Thummar's work as a MERN Stack Developer, experienced in building modern web applications with React, Node.js, and more."
+        />
+        <meta property="og:image" content="/darshilthummar.JPG" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Darshil Thummar",
+              jobTitle: "Full Stack Developer",
+              url: "https://darshilthummar.vercel.app",
+              image: "https://darshilthummar.vercel.app/darshilthummar.JPG",
+              sameAs: [
+                "https://github.com/darshilthummar09",
+                "https://www.linkedin.com/in/darshil-thummar-50bb8b216",
+              ],
+              knowsAbout: ["JavaScript", "React", "Node.js", "TypeScript", "MongoDB", "Express"],
+            }),
+          }}
+        />
+      </Head>
 
-            {/* Modal */}
-            {isModalOpen && (
-              <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
-                <div className="relative bg-white rounded-lg overflow-hidden shadow-lg">
-                  <button
-                    className="absolute top-2 right-2 text-white rounded-full p-2 hover:text-gray-700 transition"
-                    onClick={toggleModal}
-                  >
-                    ✖
-                  </button>
+      <ResponsiveBox
+        classNames="dark:bg-[var(--bgColor)] bg-[var(--bgColor)] dark:bg-grid-white/[0.1] bg-grid-white/[0.1] items-center justify-center lg:px-40"
+        id={id}
+      >
+        <ConstrainedBox classNames="py-16">
+          <SectionTitle>About me</SectionTitle>
+          <section className="w-full flex flex-col md:flex-row justify-between gap-8">
+            <article className="flex-1 p-6 flex flex-col gap-8 my-auto">
+              <motion.header
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ amount: 0.3 }}
+                transition={{ duration: 0.6 }}
+                className="flex items-center gap-6"
+              >
+                <button
+                  aria-label="View full profile image"
+                  className="relative w-28 h-28 rounded-full overflow-hidden border-4 border-[var(--primaryColor)]"
+                  onClick={toggleModal}
+                >
                   <Image
                     src="/darshilthummar.JPG"
-                    alt="Darshil Thummar Full Image"
-                    width={500}
-                    height={500}
+                    alt="Darshil Thummar - Full Stack Developer"
+                    fill
                     className="object-cover"
+                    priority
                   />
+                </button>
+                <div>
+                  <h1 className="text-2xl font-bold text-[var(--primaryColor)] mb-1">
+                    Darshil Thummar
+                  </h1>
+                  <p className="text-lg text-white">
+                    Full Stack Developer <br />
+                    <span className="text-base text-white">
+                      MERN | Next.js | TypeScript
+                    </span>
+                  </p>
                 </div>
-              </div>
-            )}
+              </motion.header>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ amount: 0.3 }}
-              transition={{ duration: 0.6 }}
-            >
-              <p className="mb-4 text-xl leading-relaxed">
-                I’m a passionate{" "}
-                <span className="font-semibold text-[var(--primaryColor)]">
-                  Full Stack Developer
-                </span>{" "}
-                with a love for building seamless web experiences. I specialize
-                in the{" "}
-                <span className="font-semibold text-[var(--primaryColor)]">
-                  MERN stack
-                </span>{" "}
-                and thrive on transforming ideas into scalable products.
-              </p>
-              <p className="text-lg text-blue-100">
-                Always learning, always building. My focus is on clean code,
-                great UX, and modern design.
-              </p>
-            </motion.div>
-
-            <motion.div
-              className="flex flex-wrap gap-4 mt-2 justify-start sm:justify-center lg:justify-center"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ amount: 0.3 }}
-              transition={{ duration: 0.6 }}
-            >
-              {techStack.map(({ name, icon }) => (
-                <motion.div
-                  key={name}
-                  className="w-25 h-20 bg-white/10 p-3 rounded-xl flex flex-col items-center justify-center shadow-lg hover:scale-110 transition"
-                  whileHover={{ scale: 1.15, rotate: -5 }}
+              {/* Modal */}
+              {isModalOpen && (
+                <div
+                  className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
+                  role="dialog"
+                  aria-modal="true"
                 >
-                  <Image src={icon} alt={name} width={32} height={32} />
-                  <span className="text-xs mt-2 text-white text-center">
-                    {name}
-                  </span>
-                </motion.div>
-              ))}
-            </motion.div>
+                  <div className="relative bg-white rounded-lg overflow-hidden shadow-lg">
+                    <button
+                      className="absolute top-2 right-2 text-white rounded-full p-2 hover:text-gray-700 transition"
+                      onClick={toggleModal}
+                      aria-label="Close image modal"
+                    >
+                      ✖
+                    </button>
+                    <Image
+                      src="/darshilthummar.JPG"
+                      alt="Full-size profile image of Darshil Thummar"
+                      width={500}
+                      height={500}
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+              )}
 
-            <motion.div
-              initial={{ scale: 0.95, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ amount: 0.3 }}
-              transition={{ duration: 0.6 }}
-              className="mt-8 flex justify-center"
-            >
-              <a
-                className="inline-block bg-gradient-to-r from-[var(--primaryColor60)] to-indigo-600 hover:from-[var(--primaryColor90)] hover:to-[var(--primaryColor60)] transition text-white font-semibold py-3 px-6 rounded-lg shadow-md"
-                href="/Darshil Thummar.pdf"
-                download="Darshil_Thummar_Resume.pdf"
-                title="Download Resume"
+              <motion.section
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ amount: 0.3 }}
+                transition={{ duration: 0.6 }}
               >
-                📄 Download My Resume
-              </a>
-            </motion.div>
-          </div>
+                <p className="mb-4 text-xl leading-relaxed text-white">
+                  I’m a passionate{" "}
+                  <span className="font-semibold text-[var(--primaryColor)]">
+                    Full Stack Web Developer
+                  </span>{" "}
+                  focused on building scalable web experiences. I specialize in the{" "}
+                  <strong className="text-[var(--primaryColor)]">MERN stack</strong> and enjoy turning ideas into digital products with clean code and great UX.
+                </p>
+                <p className="text-lg text-blue-100">
+                  Always learning, always building. Proficient with React, Node.js, and TypeScript.
+                </p>
+              </motion.section>
 
-          <div className="flex-1 p-6">
-            <span className="block md:hidden py-8">
-              <SectionTitle>Education</SectionTitle>
-            </span>
-            {education.map((edu, i) => (
-              <Education key={`education-${i}`} data={edu} />
-            ))}
-          </div>
-        </div>
-      </ConstrainedBox>
-    </ResponsiveBox>
+              <motion.div
+                className="flex flex-wrap gap-4 mt-2 justify-start sm:justify-center lg:justify-center"
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ amount: 0.3 }}
+                transition={{ duration: 0.6 }}
+              >
+                {techStack.map(({ name, icon }) => (
+                  <motion.div
+                    key={name}
+                    className="w-25 h-20 bg-white/10 p-3 rounded-xl flex flex-col items-center justify-center shadow-lg hover:scale-110 transition"
+                    whileHover={{ scale: 1.15, rotate: -5 }}
+                  >
+                    <Image
+                      src={icon}
+                      alt={`${name} logo`}
+                      width={32}
+                      height={32}
+                    />
+                    <span className="text-xs mt-2 text-white text-center">{name}</span>
+                  </motion.div>
+                ))}
+              </motion.div>
+
+              <motion.div
+                initial={{ scale: 0.95, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ amount: 0.3 }}
+                transition={{ duration: 0.6 }}
+                className="mt-8 flex justify-center"
+              >
+                <a
+                  className="inline-block bg-gradient-to-r from-[var(--primaryColor60)] to-indigo-600 hover:from-[var(--primaryColor90)] hover:to-[var(--primaryColor60)] transition text-white font-semibold py-3 px-6 rounded-lg shadow-md"
+                  href="/Darshil Thummar.pdf"
+                  download="Darshil_Thummar_Resume.pdf"
+                  title="Download Resume"
+                >
+                  📄 Download My Resume
+                </a>
+              </motion.div>
+            </article>
+
+            <aside className="flex-1 p-6">
+              <span className="block md:hidden py-8">
+                <SectionTitle>Education</SectionTitle>
+              </span>
+              {education.map((edu, i) => (
+                <Education key={`education-${i}`} data={edu} />
+              ))}
+            </aside>
+          </section>
+        </ConstrainedBox>
+      </ResponsiveBox>
+    </>
   );
 };
 
