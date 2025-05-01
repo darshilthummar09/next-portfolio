@@ -12,8 +12,10 @@ const ExperienceItem = ({ data }: { data: IExperienceItem }) => {
           <p className="text-2xl font-extrabold text-white tracking-wide">
             {data.designation}
           </p>
-          <p className=" font-extrabold text-white text-sm font-medium">
+          <p className=" font-extrabold text-[var(--primaryColor)] text-sm font-medium">
+            <a href='https://sparkleinfotech.com/' target="_blank" rel="noopener noreferrer">
             @ {data.company}
+            </a>
           </p>
           <p className="text-white text-sm font-medium italic">
             {data.location} | {data.startDate} - {data.isCurrentJob== true && "Present"}
