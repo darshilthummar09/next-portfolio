@@ -1,32 +1,32 @@
-'use client'
+"use client";
 
-import type { TimelineEntry } from '@/interfaces'
-import React, { useState, useEffect, useRef } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import type { TimelineEntry } from "@/interfaces";
+import React, { useState, useEffect, useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const Education = ({ data }: { data: TimelineEntry }) => {
-  const containerRef = useRef<HTMLDivElement>(null)
-  const ref = useRef<HTMLDivElement>(null)
-  const [height, setHeight] = useState(0)
+  const containerRef = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
+  const [height, setHeight] = useState(0);
 
   useEffect(() => {
     if (ref.current) {
-      const rect = ref.current.getBoundingClientRect()
-      setHeight(rect.height)
+      const rect = ref.current.getBoundingClientRect();
+      setHeight(rect.height);
     }
-  }, [ref])
+  }, [ref]);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ['start 40%', 'end 40%'],
-  })
+    offset: ["start 40%", "end 40%"],
+  });
 
   const heightTransform = useTransform(
     scrollYProgress,
     [0, 1],
-    [0, height + 60],
-  )
-  const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 2])
+    [0, height + 60]
+  );
+  const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 2]);
 
   return (
     <div className="w-full mt-8 mb-8" ref={containerRef}>
@@ -75,14 +75,17 @@ const Education = ({ data }: { data: TimelineEntry }) => {
                 <h4>
                   Duration - {item.startDate} - {item.endDate}
                 </h4>
-                <h4>{item?.cgpa ? `CGPA` : `Percentage`} - {item?.cgpa ? item.cgpa : item.percentage}</h4>
+                <h4>
+                  {item?.cgpa ? `CGPA` : `Percentage`} -{" "}
+                  {item?.cgpa ? item.cgpa : item.percentage}
+                </h4>
               </div>
             </div>
           </motion.div>
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Education
+export default Education;
