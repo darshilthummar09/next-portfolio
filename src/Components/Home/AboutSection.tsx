@@ -1,29 +1,29 @@
-"use client"
+"use client";
 
-import React, { useState } from 'react'
-import { motion } from 'framer-motion'
-import ResponsiveBox from '../core/ResponsiveBox'
-import ConstrainedBox from '../core/constrained-box'
-import SectionTitle from '../common/SectionTitle'
-import education from '../../data/education'
-import Education from '../UI/Education'
-import Image from 'next/image'
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import ResponsiveBox from "../core/ResponsiveBox";
+import ConstrainedBox from "../core/constrained-box";
+import SectionTitle from "../common/SectionTitle";
+import education from "../../data/education";
+import Education from "../UI/Education";
+import Image from "next/image";
 
 const techStack = [
-  { name: 'MongoDB', icon: '/skills/mongodb.svg' },
-  { name: "Express", icon: './skills/express.svg' },
-  { name: 'React', icon: '/skills/react.svg' },
-  { name: 'Node.js', icon: '/skills/nodejs.svg' },
-  { name: 'TypeScript', icon: '/skills/typescript.svg' },
-  { name: 'Firebase', icon: '/skills/firebase.svg' }
-]
+  { name: "MongoDB", icon: "/skills/mongodb.svg" },
+  { name: "Express", icon: "./skills/express.svg" },
+  { name: "React", icon: "/skills/react.svg" },
+  { name: "Node.js", icon: "/skills/nodejs.svg" },
+  { name: "TypeScript", icon: "/skills/typescript.svg" },
+  { name: "Firebase", icon: "/skills/firebase.svg" },
+];
 
 const AboutSection = ({ id }: { id: string }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleModal = () => {
-    setIsModalOpen(!isModalOpen)
-  }
+    setIsModalOpen(!isModalOpen);
+  };
 
   return (
     <ResponsiveBox
@@ -58,7 +58,9 @@ const AboutSection = ({ id }: { id: string }) => {
                 </h3>
                 <p className="text-lg text-white">
                   Full Stack Developer <br />
-                  <span className="text-base text-white">MERN | Next.js | Typescript</span>
+                  <span className="text-base text-white">
+                    MERN | Next.js | Typescript
+                  </span>
                 </p>
               </div>
             </motion.div>
@@ -91,10 +93,20 @@ const AboutSection = ({ id }: { id: string }) => {
               transition={{ duration: 0.6 }}
             >
               <p className="mb-4 text-xl leading-relaxed">
-                I’m a passionate <span className="font-semibold text-[var(--primaryColor)]">Full Stack Developer</span> with a love for building seamless web experiences. I specialize in the <span className="font-semibold text-[var(--primaryColor)]">MERN stack</span> and thrive on transforming ideas into scalable products.
+                I’m a passionate{" "}
+                <span className="font-semibold text-[var(--primaryColor)]">
+                  Full Stack Developer
+                </span>{" "}
+                with a love for building seamless web experiences. I specialize
+                in the{" "}
+                <span className="font-semibold text-[var(--primaryColor)]">
+                  MERN stack
+                </span>{" "}
+                and thrive on transforming ideas into scalable products.
               </p>
               <p className="text-lg text-blue-100">
-                Always learning, always building. My focus is on clean code, great UX, and modern design.
+                Always learning, always building. My focus is on clean code,
+                great UX, and modern design.
               </p>
             </motion.div>
 
@@ -112,7 +124,9 @@ const AboutSection = ({ id }: { id: string }) => {
                   whileHover={{ scale: 1.15, rotate: -5 }}
                 >
                   <Image src={icon} alt={name} width={32} height={32} />
-                  <span className="text-xs mt-2 text-white text-center">{name}</span>
+                  <span className="text-xs mt-2 text-white text-center">
+                    {name}
+                  </span>
                 </motion.div>
               ))}
             </motion.div>
@@ -136,7 +150,9 @@ const AboutSection = ({ id }: { id: string }) => {
           </div>
 
           <div className="flex-1 p-6">
-            <span className='block md:hidden py-8'><SectionTitle>Education</SectionTitle></span>
+            <span className="block md:hidden py-8">
+              <SectionTitle>Education</SectionTitle>
+            </span>
             {education.map((edu, i) => (
               <Education key={`education-${i}`} data={edu} />
             ))}
@@ -144,7 +160,7 @@ const AboutSection = ({ id }: { id: string }) => {
         </div>
       </ConstrainedBox>
     </ResponsiveBox>
-  )
-}
+  );
+};
 
-export default AboutSection
+export default AboutSection;
