@@ -12,7 +12,7 @@ import ExperienceItem from "../UI/ExperienceItem";
               id={id}
             >
               <ConstrainedBox classNames="py-12">
-                <SectionTitle>Expirence</SectionTitle>
+                <SectionTitle>Experience</SectionTitle>
         
                 <div className="w-full flex flex-col md:flex-row justify-between space-x-4">
                   <div className="flex-1 p-6">
