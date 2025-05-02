@@ -17,9 +17,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Darshil Thummar | MERN Stack Developer Portfolio",
+  title: 'Darshil Thummar | Full Stack Developer Portfolio | MERN Stack',
   description:
-    "Explore the portfolio of Darshil Thummar, a passionate Full Stack Developer specializing in the MERN stack. Discover projects, skills, and experience in modern web development.",
+    'Explore the portfolio of Darshil Thummar, Full Stack Developer specializing in the MERN stack. Discover web projects, skills, and modern development expertise.',
   keywords: [
     "Darshil Thummar",
     "Full Stack Developer",
