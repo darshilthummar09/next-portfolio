@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     title: 'Darshil Thummar | MERN Stack Developer Portfolio',
     description:
       'Explore projects, skills, and work experience of Darshil Thummar, a skilled MERN Stack Developer.',
-    images: ['https://media.licdn.com/dms/image/v2/D4D03AQHjJaYuDImKvQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1680426267263?e=2147483647&v=beta&t=_-UqP7zh9VyYiBOO-2oZQb5Auztu1KIobgUIwkj8ZYM'], // Replace with your actual image
+    images: ['https://raw.githubusercontent.com/darshilthummar09/next-portfolio/refs/heads/main/public/darshilthummar.JPG?token=GHSAT0AAAAAADDFZTSGRTQX6UEU2EXL6MXQ2AUI7FA'], // Replace with your actual image
   },
   icons: {
     icon: '/favicon.ico',
