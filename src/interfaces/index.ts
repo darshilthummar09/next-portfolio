@@ -25,14 +25,14 @@ export interface INavItem {
 // }
 
 export interface IExperienceItem {
-  designation: string;
   company: string;
-  startDate: string;
-  endDate?: string;
-  isCurrentJob: boolean;
-  location: string;
-  shortDescription?: string;
-  description: string[];
+  position: string;
+  startDate: string; 
+  endDate: string;
+  description: string;
+  location?: string;
+  companyLogo?: string;
+  companyLink?: string;
 }
 
 export enum RepoType {
