@@ -1,12 +1,24 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
+  http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-    <!-- Main page -->
-    <url>
-        <loc>https://darshilthummar.vercel.app</loc>
-        <lastmod>2025-04-11T18:00:00.000Z</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
+  <!-- Home Page -->
+  <url>
+    <loc>https://darshilthummar.vercel.app/</loc>
+    <lastmod>2025-05-28</lastmod>
+    <priority>1.0</priority>
+    <changefreq>daily</changefreq>
+  </url>
+
+  <!-- About Section -->
+  <url>
+    <loc>https://darshilthummar.vercel.app/#about</loc>
+    <lastmod>2025-05-28</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 
 </urlset>
