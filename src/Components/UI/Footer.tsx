@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center mb-4">
           <div className="text-center md:text-left text-sm text-gray-400">
             <p>
-              Built by{" "}
+              &copy; {currentYear} Built by{" "}
               <a
                 href="https://darshilthummar.vercel.app"
                 title="Darshil Thummar - Full Stack MERN Developer Portfolio"
@@ -41,11 +41,6 @@ const Footer = () => {
               </li>
             </ul>
           </nav>
-        </div>
-
-        {/* Copyright */}
-        <div className="text-center text-xs text-gray-500">
-          <p>&copy; {currentYear} Darshil Thummar. All rights reserved.</p>
         </div>
       </div>
     </footer>
