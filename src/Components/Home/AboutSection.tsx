@@ -17,6 +17,8 @@ const techStack = [
   { name: "Node.js", icon: "/skills/nodejs.svg" },
   { name: "TypeScript", icon: "/skills/typescript.svg" },
   { name: "Firebase", icon: "/skills/firebase.svg" },
+  { name: "Supabase", icon: "/skills/supabase.svg" }, // ✅ Added
+  { name: "n8n Automation", icon: "/skills/n8n.svg" }, // ✅ Added
 ];
 
 const AboutSection = ({ id }: { id: string }) => {
@@ -29,12 +31,12 @@ const AboutSection = ({ id }: { id: string }) => {
         <title>Darshil Thummar | Full Stack MERN Developer</title>
         <meta
           name="description"
-          content="Darshil Thummar is a Full Stack Developer specializing in the MERN stack, Next.js, and TypeScript. Passionate about building scalable web applications."
+          content="Darshil Thummar is a Full Stack Developer specializing in the MERN stack, Next.js, TypeScript, Supabase, and n8n Automation workflows. Passionate about building scalable web applications."
         />
         <meta property="og:title" content="Darshil Thummar | Full Stack Developer" />
         <meta
           property="og:description"
-          content="Explore Darshil Thummar's work as a MERN Stack Developer, experienced in building modern web applications with React, Node.js, and more."
+          content="Explore Darshil Thummar's work as a MERN Stack Developer, experienced in React, Node.js, Supabase, and n8n Automation workflows."
         />
         <meta property="og:image" content="/darshilthummar.JPG" />
         <meta property="og:type" content="website" />
@@ -53,7 +55,16 @@ const AboutSection = ({ id }: { id: string }) => {
                 "https://github.com/darshilthummar09",
                 "https://www.linkedin.com/in/darshil-thummar-50bb8b216",
               ],
-              knowsAbout: ["JavaScript", "React", "Node.js", "TypeScript", "MongoDB", "Express"],
+              knowsAbout: [
+                "JavaScript",
+                "React",
+                "Node.js",
+                "TypeScript",
+                "MongoDB",
+                "Express",
+                "Supabase",
+                "n8n Automation"
+              ],
             }),
           }}
         />
@@ -94,7 +105,7 @@ const AboutSection = ({ id }: { id: string }) => {
                   <p className="text-lg text-white">
                     Full Stack Developer <br />
                     <span className="text-base text-white">
-                      MERN | Next.js | TypeScript
+                      MERN | Next.js | TypeScript | Supabase | n8n
                     </span>
                   </p>
                 </div>
@@ -138,10 +149,13 @@ const AboutSection = ({ id }: { id: string }) => {
                     Full Stack Web Developer
                   </span>{" "}
                   focused on building scalable web experiences. I specialize in the{" "}
-                  <strong className="text-[var(--primaryColor)]">MERN stack</strong> and enjoy turning ideas into digital products with clean code and great UX.
+                  <strong className="text-[var(--primaryColor)]">MERN stack</strong> and enjoy turning ideas into digital products with clean code and great UX. <br /><br />
+                  Along with that, I work with{" "}
+                  <strong className="text-[var(--primaryColor)]">Supabase</strong> for modern backend solutions and{" "}
+                  <strong className="text-[var(--primaryColor)]">n8n Automation Workflows</strong> to automate processes and connect different systems seamlessly.
                 </p>
                 <p className="text-lg text-blue-100">
-                  Always learning, always building. Proficient with React, Node.js, and TypeScript.
+                  Always learning, always building. Proficient with React, Node.js, TypeScript, Supabase, and workflow automations using n8n.
                 </p>
               </motion.section>
 
