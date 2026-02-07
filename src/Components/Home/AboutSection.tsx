@@ -25,7 +25,7 @@ const AboutSection = ({ id }: { id: string }) => {
       <ConstrainedBox classNames="py-20 relative z-10">
         <SectionTitle>About me</SectionTitle>
 
-        <section className="grid lg:grid-cols-[1.05fr_0.95fr] gap-8">
+        <section className="grid lg:grid-cols-[1.05fr_0.95fr] gap-6">
           <article className="section-surface p-6 sm:p-8 flex flex-col gap-6">
             <div className="flex items-center gap-4">
               <div className="relative w-20 h-20 rounded-2xl overflow-hidden border border-white/15">
@@ -80,18 +80,21 @@ const AboutSection = ({ id }: { id: string }) => {
             </a>
           </article>
 
-          <aside className="section-surface p-6 sm:p-8">
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-xl font-semibold">Education</h3>
-              <span className="text-xs uppercase tracking-[0.3em] text-[var(--textColorLight)]">
-                Timeline
-              </span>
+          <aside className="section-surface p-6 sm:p-8 self-start">
+            <div className="mb-6">
+              <p className="text-xs uppercase tracking-[0.3em] text-[var(--textColorLight)]">
+                Education
+              </p>
+              <h3 className="text-xl font-semibold mt-2">
+                Academic background
+              </h3>
+              <p className="text-sm text-[var(--textColorLight)] mt-2">
+                A compact snapshot of my education journey.
+              </p>
             </div>
-            <div className="space-y-4">
-              {education.map((edu, i) => (
-                <Education key={`education-${i}`} data={edu} />
-              ))}
-            </div>
+            {education.map((edu, i) => (
+              <Education key={`education-${i}`} data={edu} />
+            ))}
           </aside>
         </section>
       </ConstrainedBox>

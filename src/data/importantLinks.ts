@@ -36,6 +36,7 @@
       name: Strings.upwork,
       url: Strings.upworkLink,
       icon: Strings.upworkIcon,
+      iconImage: Strings.upworkIconImage,
       text: Strings.upworkUsername,
     }
   ];

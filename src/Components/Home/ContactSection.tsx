@@ -29,6 +29,7 @@ const HomeSection6 = ({ id }: { id: string }) => {
                   key={`social-link-${index}`}
                   text={link.text}
                   icon={link.icon}
+                  iconImage={link.iconImage}
                   url={link.url}
                   className="flex items-center gap-x-3 p-4 border border-white/10 rounded-xl text-lg hover:border-[var(--primaryColor)] hover:text-[var(--primaryColor)] transition duration-300"
                 />

@@ -85,7 +85,17 @@ const HomeSection = ({ id }: Readonly<{ id: string }>) => {
                     aria-label={`${link.name}`}
                     className="flex items-center justify-center h-12 w-12 rounded-full border border-white/10 text-xl text-[var(--textColor)] hover:border-[var(--primaryColor)] hover:text-[var(--primaryColor)] transition"
                   >
-                    <i className={link.icon} />
+                    {link.iconImage ? (
+                      <Image
+                        src={link.iconImage}
+                        alt={`${link.name ?? "Social"} logo`}
+                        width={22}
+                        height={22}
+                        className="w-5 h-5 object-contain"
+                      />
+                    ) : (
+                      <i className={link.icon} />
+                    )}
                   </Link>
                 ))}
               </Row>

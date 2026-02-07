@@ -26,6 +26,7 @@ class Strings {
 
   static upwork = "Upwork";
   static upworkIcon = "bi bi-person-circle";
+  static upworkIconImage = "/images/upwork.svg";
   static upworkLink = "https://www.upwork.com/freelancers/~01a1169d0317f924fb?mp_source=share";
   static upworkUsername = "Darshil T.";
 
