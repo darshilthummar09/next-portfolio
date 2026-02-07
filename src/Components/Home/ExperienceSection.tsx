@@ -7,11 +7,15 @@ import ResponsiveBox from "../core/ResponsiveBox";
 const ExperienceSection = ({ id }: { id: string }) => {
   return (
     <ResponsiveBox
-      classNames="dark:bg-[var(--dialogColor)] bg-[var(--dialogColor)] items-center justify-center dark:bg-dot-white/[0.15] bg-dot-white/[0.15] lg:px-40"
+      classNames="section-shell items-center justify-center lg:px-32"
       id={id}
     >
-      <ConstrainedBox classNames="px-4 py-16">
+      <ConstrainedBox classNames="px-4 py-20 relative z-10">
         <SectionTitle>Experience</SectionTitle>
+        <p className="text-center text-[var(--textColorLight)] max-w-2xl mx-auto">
+          Roles and collaborations where I delivered production-ready web
+          products, APIs, and interactive interfaces.
+        </p>
         <ExperienceCard data={experiences} />
       </ConstrainedBox>
     </ResponsiveBox>

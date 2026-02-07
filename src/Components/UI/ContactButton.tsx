@@ -21,7 +21,7 @@ const ContactButton = ({ text, icon, url, className }: any) => {
         )}
       </span> */}
         <i className={icon} />
-      <p className="text-lg/6 font-semibold text-[var(--textColor)]">{text}</p>
+      <p className="text-base font-semibold text-[var(--textColor)]">{text}</p>
     </Link>
   );
 };
