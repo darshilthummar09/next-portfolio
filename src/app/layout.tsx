@@ -1,63 +1,113 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Space_Grotesk, Fraunces } from "next/font/google";
 import "./globals.css";
 import Header from "@/Components/UI/Header";
 import ScrollToTop from "@/Components/common/ScrollToTop";
 import { navMenus } from "../data/navItems";
 import Footer from "@/Components/UI/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: 'Darshil Thummar | Full Stack Developer | MERN Stack Expert',
+  title: "Darshil Thummar | Full Stack Developer | MERN Stack Expert",
   description:
-    'Discover the innovative portfolio of Darshil Thummar, a seasoned Full Stack Developer proficient in the MERN stack. Explore cutting-edge web applications, JavaScript expertise, and scalable digital solutions. Learn about his projects, skills, and professional journey in modern web development.',
+    "Discover the innovative portfolio of Darshil Thummar, a seasoned Full Stack Developer proficient in the MERN stack. Explore cutting-edge web applications, JavaScript expertise, and scalable digital solutions. Learn about his projects, skills, and professional journey in modern web development.",
   keywords: [
-    "Darshil Thummar", "Darshil", "darshil", "thummardarshil", "Thummar Darshil", "Thummar",
-    "Full Stack Developer", "Full Stack JavaScript Developer", "Full Stack Web Engineer",
-    "MERN Stack Developer", "MERN Stack Expert", "MERN Stack Projects", "MERN Developer Portfolio",
-    "React Developer", "React.js Developer", "React and Node.js Developer", "React and Redux Developer",
-    "Node.js Developer", "Node.js Expert", "MongoDB Developer", "Express.js Developer",
-    "TypeScript Developer", "Next.js Developer Portfolio", "Frontend Developer", "Frontend Development",
-    "Backend Developer", "Backend Development", "JavaScript Developer", "JavaScript Expert",
-    "JavaScript Frameworks Expert", "Responsive Web Design", "Clean Code Developer", "UI/UX Focused Developer",
-    "Web Developer", "Web Application Developer", "Performance Optimized Web Apps",
-    "Cross Platform Web Developer", "Dynamic Web Applications", "Scalable Web Apps",
-    "REST API Developer", "API Integration Expert", "Cloud Web Developer", "Software Developer Portfolio",
-    "GitHub Developer Portfolio", "Frontend Mentor Projects", "JavaScript Interview Projects",
-    "Web Developer Portfolio", "Full Stack Portfolio", "Portfolio", "Best Full Stack Portfolios",
-    "Darshil Thummar Portfolio", "DarshilThummar", "darshilthummar", "Web Development Portfolio",
-    "Modern Web Development", "Hire MERN Stack Developer", "Remote Full Stack Developer",
-    "Freelance MERN Developer", "Freelance React Developer", "Remote React Developer Portfolio",
-    "Contract Full Stack Developer", "Affordable Web Developer", "Web Developer India",
-    "Hire Full Stack Developer India", "Web Developer for Startups", "Outsource Web Development India",
-    "Upwork Full Stack Developer", "Fiverr Web Developer India", "Fast Loading Web Apps",
-    "SEO Friendly Developer", "Lighthouse Optimized Websites", "Mobile-First Developer",
-    "Progressive Web Apps Developer", "CRUD Application Developer", "SPA Developer",
-    "CI/CD Web Developer Portfolio", "Docker Web Developer", "Tailwind CSS Developer",
-    "UI Developer Portfolio", "CodeBucket Developer Portfolio",
-    "sparkle infotech", "sparkleinfotech", "Darshil Thummar Sparkle Infotech",
-    "Sparkle Infotech Developer", "Full Stack Developer at Sparkle Infotech",
-    "MERN Stack Developer at Sparkle Infotech", "Sparkle Infotech MERN Developer",
-    "Sparkle Infotech Web Developer", "Sparkle Infotech React Developer",
-    "Sparkle Infotech Node.js Developer", "Darshil Thummar Sparkle Infotech Projects",
-    "Sparkle Infotech Team Member", "Sparkle Infotech Web Application Developer",
-    "Sparkle Infotech Software Developer", "Sparkle Infotech Full Stack Portfolio",
-    "Best Developer at Sparkle Infotech", "Sparkle Infotech Projects and Solutions",
-    "Sparkle Infotech Expert Developer", "Sparkle Infotech Web Development"
+    "Darshil Thummar",
+    "Darshil",
+    "darshil",
+    "thummardarshil",
+    "Thummar Darshil",
+    "Thummar",
+    "Full Stack Developer",
+    "MERN Stack Developer",
+    "React Developer",
+    "Node.js Developer",
+    "Portfolio",
+    "Web Developer",
+    "Frontend Developer",
+    "Backend Developer",
+    "JavaScript Developer",
+    "MongoDB Developer",
+    "Express.js Developer",
+    "React.js Developer",
+    "Node.js Expert",
+    "MERN Stack Portfolio",
+    "Web Development Portfolio",
+    "Darshil Thummar Portfolio",
+    "Modern Web Development",
+    "JavaScript Expert",
+    "Frontend Development",
+    "Backend Development",
+    "Full Stack Portfolio",
+    "Scalable Web Apps",
+    "Dynamic Web Applications",
+    "DarshilThummar",
+    "darshilthummar",
+    "MERN Stack Projects",
+    "Web Developer Portfolio",
+    "React and Node.js Developer",
+    "MERN Stack Expert",
+    "Remote Full Stack Developer",
+    "Freelance MERN Developer",
+    "Hire MERN Stack Developer",
+    "Best Full Stack Portfolios",
+    "Open Source Developer",
+    "Next.js Developer Portfolio",
+    "TypeScript Developer",
+    "Responsive Web Design",
+    "Web Application Developer",
+    "JavaScript Frameworks Expert",
+    "Clean Code Developer",
+    "GitHub Developer Portfolio",
+    "Full Stack Web Engineer",
+    "REST API Developer",
+    "API Integration Expert",
+    "Cloud Web Developer",
+    "Software Developer Portfolio",
+    "Performance Optimized Web Apps",
+    "Cross Platform Web Developer",
+    "React Hooks Developer",
+    "Frontend Mentor Projects",
+    "JavaScript Interview Projects",
+    "UI/UX Focused Developer",
+    "Darshil developer",
+    "Darshil full stack developer",
+    "Darshil MERN developer",
+    "Darshil React developer",
+    "Darshil Node developer",
+    "Darshil Next.js developer",
+    "Who is Darshil",
+    "Who is Darshil Thummar",
+    "Darshil Thummar developer",
+    "Darshil Thummar full stack",
+    "Darshil Thummar MERN",
+    "Darshil Thummar React",
+    "Darshil Thummar Node",
+    "Darshil Thummar Next.js",
+    "Darshil portfolio",
+    "Darshil Thummar portfolio",
+    "Darshil personal website",
+    "Darshil Thummar personal website",
+    "Darshil Thummar Surat",
+    "Darshil Surat developer",
+    "Darshil Gujarat developer",
+    "Darshil Thummar India",
+    "Darshil Thummar LinkedIn",
+    "Darshil Thummar GitHub",
   ],
   openGraph: {
     title: "Darshil Thummar | MERN Stack Developer & Web Innovator",
     description:
-      "Explore Darshil Thummar’s portfolio highlighting expertise in MongoDB, Express.js, React.js, and Node.js. Browse modern web solutions, creative UI/UX designs, and impactful digital projects.",
+      "Explore Darshil Thummar's portfolio highlighting expertise in MongoDB, Express.js, React.js, and Node.js. Browse modern web solutions, creative UI/UX designs, and impactful digital projects.",
     url: "https://darshilthummar.vercel.app/",
     siteName: "Darshil Thummar Portfolio",
     images: [
@@ -75,7 +125,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Darshil Thummar | Full Stack Developer & Web Solutions Expert",
     description:
-      "Discover Darshil Thummar’s professional portfolio. MERN Stack Developer creating high-performance web apps and modern digital experiences.",
+      "Discover Darshil Thummar's professional portfolio. MERN Stack Developer creating high-performance web apps and modern digital experiences.",
     images: [
       "https://media.licdn.com/dms/image/v2/D4D03AQHjJaYuDImKvQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1680426267263?e=1751500800&v=beta&t=lfizyua1IhZjfMksF88uyMddfRyUtPhZHOosU0XIVjg",
     ],
@@ -95,7 +145,7 @@ export default function RootLayout({
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="./favicon.ico" />
+        <link rel="icon" href="./favicon.ico" id="dynamic-favicon" />
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
@@ -106,6 +156,7 @@ export default function RootLayout({
               (function() {
                 const userAgent = navigator.userAgent || navigator.vendor || window.opera;
                 const favicon = document.getElementById('dynamic-favicon');
+                if (!favicon) return;
                 if (/android/i.test(userAgent)) {
                   favicon.href = './android-chrome-192x192.png';
                 } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
@@ -119,7 +170,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${spaceGrotesk.variable} ${fraunces.variable} antialiased`}
       >
         <script
           type="application/ld+json"

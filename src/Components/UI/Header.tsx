@@ -28,7 +28,7 @@ const FloatingNavbar = ({
           duration: 0.2,
         }}
         className={cn(
-          "flex w-fit fixed top-4 inset-x-0 mx-auto border border-white/[0.25] rounded-full bg-[var(--dialogColor50)] backdrop-blur-sm shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] px-4 py-3 items-center space-x-4",
+          "flex w-fit fixed top-6 inset-x-0 mx-auto border border-white/10 rounded-full bg-[var(--dialogColor50)] backdrop-blur-xl shadow-[0_12px_30px_rgba(2,6,23,0.35)] z-[5000] px-6 py-3 items-center space-x-4",
           className
         )}
       >
@@ -39,7 +39,7 @@ const FloatingNavbar = ({
                 <Link
                   href={navItem.link}
                   className={cn(
-                    "relative flex items-center space-x-1 text-neutral-50 group"
+                    "relative flex items-center space-x-1 text-[var(--textColor)] group"
                   )}
                 >
                   {/* Icon for mobile view */}
@@ -61,7 +61,7 @@ const FloatingNavbar = ({
                   </span>
 
                   {/* Icon with text for larger screens */}
-                  <span className="hidden sm:block text-sm/6 lg:text-base relative overflow-hidden">
+                  <span className="hidden sm:block text-xs lg:text-sm font-semibold tracking-[0.16em] uppercase relative overflow-hidden">
                     <span className="relative z-10">{navItem.name}</span>
                     <span className="absolute inset-0 text-[var(--primaryColor)] transition-transform transform translate-y-full group-hover:translate-y-0 duration-300 ease-in-out z-10">
                       {navItem.name}

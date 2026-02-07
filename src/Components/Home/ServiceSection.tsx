@@ -7,12 +7,17 @@ import services from "@/data/services";
 const HomeSection2 = ({ id }: { id: string }) => {
   return (
     <ResponsiveBox
-      classNames="dark:bg-[var(--dialogColor)] bg-[var(--dialogColor)] min-h-screen items-center justify-center dark:bg-dot-white/[0.15] bg-dot-white/[0.15] rounded-md lg:px-40"
+      classNames="section-shell min-h-screen items-center justify-center lg:px-32"
       id={id}
     >
-      <ConstrainedBox classNames="px-4 py-16 z-20">
+      <ConstrainedBox classNames="px-4 py-20 relative z-10">
         <SectionTitle>Services</SectionTitle>
-        <HoverGrid cards={services} />
+        <p className="text-center text-[var(--textColorLight)] max-w-2xl mx-auto">
+          I design and build full stack solutions that move quickly from
+          strategy to execution, with a focus on clean UI and reliable backend
+          systems.
+        </p>
+        <HoverGrid cards={services} className="mt-12" />
       </ConstrainedBox>
     </ResponsiveBox>
   );
