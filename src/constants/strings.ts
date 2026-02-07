@@ -24,6 +24,12 @@ class Strings {
   static twitterLink = "https://x.com/darshilthummar1?s=11&t=C5M8N73No1zLgh24DrTUrQ";
   static twitterUsername = "darshilthummar1";
 
+  static upwork = "Upwork";
+  static upworkIcon = "bi bi-person-circle";
+  static upworkLink = "https://www.upwork.com/freelancers/~01a1169d0317f924fb?mp_source=share";
+  static upworkUsername = "Darshil T.";
+
+
   static fullName = "Darshil Thummar";
   static shortName = "U.S.";
 }
