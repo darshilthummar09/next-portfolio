@@ -6,8 +6,8 @@
 }
 
 .btnStyle {
-  background-color: var(--bgColor);
-  border: 2px solid white;
+  background-color: var(--surfaceColor);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 50%;
   height: 3rem;
   width: 3rem;
@@ -23,9 +23,9 @@
 
 .btnStyle:hover {
   animation: none;
-  border: 2px solid #4361ee;
-  background-color: #4361ee;
-  color: var(--bgColor);
+  border: 1px solid var(--primaryColor);
+  background-color: var(--primaryColor);
+  color: #0b0d12;
 }
 
 .iconStyle {

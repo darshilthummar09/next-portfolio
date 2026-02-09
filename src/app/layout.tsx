@@ -1,98 +1,151 @@
-import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
-import './globals.css'
-import Header from '@/Components/UI/Header'
-import ScrollToTop from '@/Components/common/ScrollToTop'
-import { navMenus } from '../data/navItems'
-import Footer from '@/Components/UI/Footer'
+import type { Metadata } from "next";
+import { Space_Grotesk, Fraunces } from "next/font/google";
+import "./globals.css";
+import Header from "@/Components/UI/Header";
+import ScrollToTop from "@/Components/common/ScrollToTop";
+import { navMenus } from "../data/navItems";
+import Footer from "@/Components/UI/Footer";
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-})
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
+});
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-})
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
-  title: 'Darshil Thummar | MERN Stack Developer Portfolio',
+  title: "Darshil Thummar | Full Stack Developer | MERN Stack Expert",
   description:
-    'Explore the portfolio of Darshil Thummar, a passionate Full Stack Developer specializing in the MERN stack. Discover projects, skills, and experience in modern web development.',
+    "Discover the innovative portfolio of Darshil Thummar, a seasoned Full Stack Developer proficient in the MERN stack. Explore cutting-edge web applications, JavaScript expertise, and scalable digital solutions. Learn about his projects, skills, and professional journey in modern web development.",
   keywords: [
-    'Darshil Thummar',
-    'Full Stack Developer',
-    'MERN Stack Developer',
-    'React Developer',
-    'Node.js Developer',
-    'Portfolio',
-    'Web Developer',
-    'Frontend Developer',
-    'Backend Developer',
-    'JavaScript Developer',
-    'MongoDB Developer',
-    'Express.js Developer',
-    'React.js Developer',
-    'Node.js Expert',
-    'MERN Stack Portfolio',
-    'Web Development Portfolio',
-    'Darshil Thummar Portfolio',
-    'Modern Web Development',
-    'JavaScript Expert',
-    'Frontend Development',
-    'Backend Development',
-    'Full Stack Portfolio',
-    'Scalable Web Apps',
-    'Dynamic Web Applications',
-    'DarshilThummar',
-    'darshilthummar',
-    'MERN Stack Projects',
-    'Web Developer Portfolio',
-    'React and Node.js Developer',
-    'MERN Stack Expert',
+    "Darshil Thummar",
+    "Darshil",
+    "darshil",
+    "thummardarshil",
+    "Thummar Darshil",
+    "Thummar",
+    "Full Stack Developer",
+    "MERN Stack Developer",
+    "React Developer",
+    "Node.js Developer",
+    "Portfolio",
+    "Web Developer",
+    "Frontend Developer",
+    "Backend Developer",
+    "JavaScript Developer",
+    "MongoDB Developer",
+    "Express.js Developer",
+    "React.js Developer",
+    "Node.js Expert",
+    "MERN Stack Portfolio",
+    "Web Development Portfolio",
+    "Darshil Thummar Portfolio",
+    "Modern Web Development",
+    "JavaScript Expert",
+    "Frontend Development",
+    "Backend Development",
+    "Full Stack Portfolio",
+    "Scalable Web Apps",
+    "Dynamic Web Applications",
+    "DarshilThummar",
+    "darshilthummar",
+    "MERN Stack Projects",
+    "Web Developer Portfolio",
+    "React and Node.js Developer",
+    "MERN Stack Expert",
+    "Remote Full Stack Developer",
+    "Freelance MERN Developer",
+    "Hire MERN Stack Developer",
+    "Best Full Stack Portfolios",
+    "Open Source Developer",
+    "Next.js Developer Portfolio",
+    "TypeScript Developer",
+    "Responsive Web Design",
+    "Web Application Developer",
+    "JavaScript Frameworks Expert",
+    "Clean Code Developer",
+    "GitHub Developer Portfolio",
+    "Full Stack Web Engineer",
+    "REST API Developer",
+    "API Integration Expert",
+    "Cloud Web Developer",
+    "Software Developer Portfolio",
+    "Performance Optimized Web Apps",
+    "Cross Platform Web Developer",
+    "React Hooks Developer",
+    "Frontend Mentor Projects",
+    "JavaScript Interview Projects",
+    "UI/UX Focused Developer",
+    "Darshil developer",
+    "Darshil full stack developer",
+    "Darshil MERN developer",
+    "Darshil React developer",
+    "Darshil Node developer",
+    "Darshil Next.js developer",
+    "Who is Darshil",
+    "Who is Darshil Thummar",
+    "Darshil Thummar developer",
+    "Darshil Thummar full stack",
+    "Darshil Thummar MERN",
+    "Darshil Thummar React",
+    "Darshil Thummar Node",
+    "Darshil Thummar Next.js",
+    "Darshil portfolio",
+    "Darshil Thummar portfolio",
+    "Darshil personal website",
+    "Darshil Thummar personal website",
+    "Darshil Thummar Surat",
+    "Darshil Surat developer",
+    "Darshil Gujarat developer",
+    "Darshil Thummar India",
+    "Darshil Thummar LinkedIn",
+    "Darshil Thummar GitHub",
   ],
   openGraph: {
-    title: 'Darshil Thummar | MERN Stack Developer Portfolio',
+    title: "Darshil Thummar | MERN Stack Developer & Web Innovator",
     description:
-      'Portfolio of Darshil Thummar – Showcasing expertise in MongoDB, Express.js, React.js, and Node.js through impactful web projects.',
-    url: 'https://yourdomain.com',
-    siteName: 'Darshil Thummar Portfolio',
+      "Explore Darshil Thummar's portfolio highlighting expertise in MongoDB, Express.js, React.js, and Node.js. Browse modern web solutions, creative UI/UX designs, and impactful digital projects.",
+    url: "https://darshilthummar.vercel.app/",
+    siteName: "Darshil Thummar Portfolio",
     images: [
       {
-        url: 'https://yourdomain.com/og-image.jpg', // Replace with your actual OG image URL
+        url: "https://media.licdn.com/dms/image/v2/D4D03AQHjJaYuDImKvQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1680426267263?e=1751500800&v=beta&t=lfizyua1IhZjfMksF88uyMddfRyUtPhZHOosU0XIVjg",
         width: 1200,
         height: 630,
-        alt: 'Darshil Thummar Portfolio Preview',
+        alt: "Darshil Thummar Portfolio Preview",
       },
     ],
-    locale: 'en_US',
-    type: 'website',
+    locale: "en_US",
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Darshil Thummar | MERN Stack Developer Portfolio',
+    card: "summary_large_image",
+    title: "Darshil Thummar | Full Stack Developer & Web Solutions Expert",
     description:
-      'Explore projects, skills, and work experience of Darshil Thummar, a skilled MERN Stack Developer.',
-    images: ['https://media.licdn.com/dms/image/v2/D4D03AQHjJaYuDImKvQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1680426267263?e=2147483647&v=beta&t=_-UqP7zh9VyYiBOO-2oZQb5Auztu1KIobgUIwkj8ZYM'], // Replace with your actual image
+      "Discover Darshil Thummar's professional portfolio. MERN Stack Developer creating high-performance web apps and modern digital experiences.",
+    images: [
+      "https://media.licdn.com/dms/image/v2/D4D03AQHjJaYuDImKvQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1680426267263?e=1751500800&v=beta&t=lfizyua1IhZjfMksF88uyMddfRyUtPhZHOosU0XIVjg",
+    ],
   },
   icons: {
-    icon: '/favicon.ico',
+    icon: "/favicon.ico",
   },
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="google-site-verification" content="0IXFzYG-G9iwXixbQXFVanLLZdN0y2CPTZ-5qZbu-Zc" />
-        <link rel="icon" href="./favicon.ico" />
+        <link rel="icon" href="./favicon.ico" id="dynamic-favicon" />
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
@@ -103,6 +156,7 @@ export default function RootLayout({
               (function() {
                 const userAgent = navigator.userAgent || navigator.vendor || window.opera;
                 const favicon = document.getElementById('dynamic-favicon');
+                if (!favicon) return;
                 if (/android/i.test(userAgent)) {
                   favicon.href = './android-chrome-192x192.png';
                 } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
@@ -116,13 +170,44 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${spaceGrotesk.variable} ${fraunces.variable} antialiased`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Darshil Thummar",
+              jobTitle: "Full Stack Developer",
+              image:
+                "https://media.licdn.com/dms/image/v2/D4D03AQHjJaYuDImKvQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1680426267263?e=1751500800&v=beta&t=lfizyua1IhZjfMksF88uyMddfRyUtPhZHOosU0XIVjg",
+              url: "https://darshilthummar.vercel.app/#experiences",
+              sameAs: [
+                "https://www.linkedin.com/in/darshil-thummar-50bb8b216/",
+                "https://github.com/darshilthummar09",
+              ],
+              worksFor: {
+                "@type": "Organization",
+                name: "Sparkle Infotech",
+                url: "https://sparkleinfotech.com/",
+              },
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Surat",
+                addressCountry: "IN",
+              },
+              description:
+                "Darshil Thummar is a passionate Full Stack Developer with 1.5 years of experience specializing in the MERN stack (MongoDB, Express.js, React.js, Node.js). Skilled in building fast, scalable, and responsive web applications, Darshil excels at combining modern front-end technologies with solid back-end solutions. Currently working as a Full Stack Developer at Sparkle Infotech, he focuses on delivering high-performance digital experiences with a user-centric approach. Darshil is constantly learning and exploring new technologies such as Next.js, PostgreSQL, and modern development practices. Open to exciting opportunities, remote roles, and collaborations with forward-thinking teams.",
+            }),
+          }}
+        />
+
         <div className="lg:px-10">{children}</div>
         <Header className="app_nav" navItems={navMenus} />
         <Footer />
         <ScrollToTop />
       </body>
     </html>
-  )
+  );
 }

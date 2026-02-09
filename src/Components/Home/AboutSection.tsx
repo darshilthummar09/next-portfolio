@@ -1,150 +1,105 @@
-"use client"
+"use client";
 
-import React, { useState } from 'react'
-import { motion } from 'framer-motion'
-import ResponsiveBox from '../core/ResponsiveBox'
-import ConstrainedBox from '../core/constrained-box'
-import SectionTitle from '../common/SectionTitle'
-import education from '../../data/education'
-import Education from '../UI/Education'
-import Image from 'next/image'
+import ResponsiveBox from "../core/ResponsiveBox";
+import ConstrainedBox from "../core/constrained-box";
+import SectionTitle from "../common/SectionTitle";
+import education from "../../data/education";
+import Education from "../UI/Education";
+import Image from "next/image";
 
 const techStack = [
-  { name: 'MongoDB', icon: '/skills/mongodb.svg' },
-  { name: "Express", icon: './skills/express.svg' },
-  { name: 'React', icon: '/skills/react.svg' },
-  { name: 'Node.js', icon: '/skills/nodejs.svg' },
-  { name: 'TypeScript', icon: '/skills/typescript.svg' },
-  { name: 'Firebase', icon: '/skills/firebase.svg' }
-]
+  { name: "MongoDB", icon: "/skills/mongodb.svg" },
+  { name: "Express", icon: "/skills/express.svg" },
+  { name: "React", icon: "/skills/react.svg" },
+  { name: "Node.js", icon: "/skills/nodejs.svg" },
+  { name: "TypeScript", icon: "/skills/typescript.svg" },
+  { name: "Firebase", icon: "/skills/firebase.svg" },
+];
 
 const AboutSection = ({ id }: { id: string }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false)
-
-  const toggleModal = () => {
-    setIsModalOpen(!isModalOpen)
-  }
-
   return (
     <ResponsiveBox
-      classNames="dark:bg-[var(--bgColor)] bg-[var(--bgColor)] dark:bg-grid-white/[0.1] bg-grid-white/[0.1] items-center justify-center lg:px-40"
+      classNames="section-shell items-center justify-center lg:px-32"
       id={id}
     >
-      <ConstrainedBox classNames="py-16">
+      <ConstrainedBox classNames="py-20 relative z-10">
         <SectionTitle>About me</SectionTitle>
-        <div className="w-full flex flex-col md:flex-row justify-between gap-8">
-          <div className="flex-1 p-6 flex flex-col gap-8 my-auto">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ amount: 0.3 }}
-              transition={{ duration: 0.6 }}
-              className="flex items-center gap-6"
-            >
-              <div
-                className="relative w-28 h-28 rounded-full overflow-hidden border-4 border-[var(--primaryColor)] cursor-pointer"
-                onClick={toggleModal}
-              >
+
+        <section className="grid lg:grid-cols-[1.05fr_0.95fr] gap-6">
+          <article className="section-surface p-6 sm:p-8 flex flex-col gap-6">
+            <div className="flex items-center gap-4">
+              <div className="relative w-20 h-20 rounded-2xl overflow-hidden border border-white/15">
                 <Image
                   src="/darshilthummar.JPG"
                   alt="Darshil Thummar"
                   fill
                   className="object-cover"
+                  priority
                 />
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-[var(--primaryColor)] mb-1">
-                  Darshil Thummar
-                </h3>
-                <p className="text-lg text-white">
-                  Full Stack Developer <br />
-                  <span className="text-base text-white">MERN | Next.js | Typescript</span>
+                <h3 className="text-2xl font-semibold">Darshil Thummar</h3>
+                <p className="text-sm text-[var(--textColorLight)]">
+                  Full Stack Developer - MERN and Next.js
                 </p>
               </div>
-            </motion.div>
+            </div>
 
-            {/* Modal */}
-            {isModalOpen && (
-              <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
-                <div className="relative bg-white rounded-lg overflow-hidden shadow-lg">
-                  <button
-                    className="absolute top-2 right-2 text-white rounded-full p-2 hover:text-gray-700 transition"
-                    onClick={toggleModal}
-                  >
-                    ✖
-                  </button>
-                  <Image
-                    src="/darshilthummar.JPG"
-                    alt="Darshil Thummar Full Image"
-                    width={500}
-                    height={500}
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-            )}
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ amount: 0.3 }}
-              transition={{ duration: 0.6 }}
-            >
-              <p className="mb-4 text-xl leading-relaxed">
-                I’m a passionate <span className="font-semibold text-[var(--primaryColor)]">Full Stack Developer</span> with a love for building seamless web experiences. I specialize in the <span className="font-semibold text-[var(--primaryColor)]">MERN stack</span> and thrive on transforming ideas into scalable products.
+            <div className="space-y-4 text-[var(--textColorLight)] text-base leading-relaxed">
+              <p>
+                I am a full stack developer focused on building scalable web
+                products with clean architecture and fast UX. I care about
+                thoughtful design, strong APIs, and maintainable codebases.
               </p>
-              <p className="text-lg text-blue-100">
-                Always learning, always building. My focus is on clean code, great UX, and modern design.
+              <p>
+                My day-to-day stack is MongoDB, Express, React, Node.js, and
+                TypeScript. I enjoy building dashboards, product sites, and
+                platform features that feel smooth and dependable.
               </p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              className="flex flex-wrap gap-4 mt-2 justify-start sm:justify-center lg:justify-center"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ amount: 0.3 }}
-              transition={{ duration: 0.6 }}
-            >
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {techStack.map(({ name, icon }) => (
-                <motion.div
+                <div
                   key={name}
-                  className="w-25 h-20 bg-white/10 p-3 rounded-xl flex flex-col items-center justify-center shadow-lg hover:scale-110 transition"
-                  whileHover={{ scale: 1.15, rotate: -5 }}
+                  className="flex items-center gap-3 section-surface px-3 py-3"
                 >
-                  <Image src={icon} alt={name} width={32} height={32} />
-                  <span className="text-xs mt-2 text-white text-center">{name}</span>
-                </motion.div>
+                  <Image src={icon} alt={`${name} logo`} width={28} height={28} />
+                  <span className="text-sm">{name}</span>
+                </div>
               ))}
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ scale: 0.95, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ amount: 0.3 }}
-              transition={{ duration: 0.6 }}
-              className="mt-8 flex justify-center"
+            <a
+              className="inline-flex w-fit items-center gap-2 px-5 py-2.5 rounded-full bg-[var(--primaryColor)] text-black font-semibold shadow-[0_10px_24px_rgba(244,184,74,0.35)] hover:translate-y-[-2px] transition"
+              href="/Darshil Thummar.pdf"
+              download="Darshil_Thummar_Resume.pdf"
+              title="Download Resume"
             >
-              <a
-                className="inline-block bg-gradient-to-r from-[var(--primaryColor60)] to-indigo-600 hover:from-[var(--primaryColor90)] hover:to-[var(--primaryColor60)] transition text-white font-semibold py-3 px-6 rounded-lg shadow-md"
-                href="/Darshil Thummar.pdf"
-                download="Darshil_Thummar_Resume.pdf"
-                title="Download Resume"
-              >
-                📄 Download My Resume
-              </a>
-            </motion.div>
-          </div>
+              Download resume
+            </a>
+          </article>
 
-          <div className="flex-1 p-6">
-            <span className='block md:hidden py-8'><SectionTitle>Education</SectionTitle></span>
+          <aside className="section-surface p-6 sm:p-8 self-start">
+            <div className="mb-6">
+              <p className="text-xs uppercase tracking-[0.3em] text-[var(--textColorLight)]">
+                Education
+              </p>
+              <h3 className="text-xl font-semibold mt-2">
+                Academic background
+              </h3>
+              <p className="text-sm text-[var(--textColorLight)] mt-2">
+                A compact snapshot of my education journey.
+              </p>
+            </div>
             {education.map((edu, i) => (
               <Education key={`education-${i}`} data={edu} />
             ))}
-          </div>
-        </div>
+          </aside>
+        </section>
       </ConstrainedBox>
     </ResponsiveBox>
-  )
-}
+  );
+};
 
-export default AboutSection
+export default AboutSection;

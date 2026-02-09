@@ -7,8 +7,10 @@ import Column from "../core/Column";
 const SkillCard = ({ data }: { data: ISkillListItem }) => {
   // console.log(data)
   return (
-    <CardBox classNames="w-full h-full p-8 bg-gradient-to-r from-[var(--bgColor)] to-[var(--primaryColor10)] shadow-2xl rounded-2xl hover:scale-105 transform transition-transform duration-300">
-      <p className="text-lg/6 font-semibold text-center text-[var(--primaryColor)]">{data.title}</p>
+    <CardBox classNames="w-full h-full p-7 section-surface hover:translate-y-[-4px] transform transition-transform duration-300">
+      <p className="text-lg font-semibold text-center text-[var(--primaryColor)]">
+        {data.title}
+      </p>
 
       {data.items.length > 0 ? (
         <Row classNames="gap-4 mt-8 flex-wrap justify-center items-center">
@@ -16,7 +18,7 @@ const SkillCard = ({ data }: { data: ISkillListItem }) => {
             return (
               <Column
                 key={`skill-item-${index}`}
-                classNames="items-center gap-1 text-[var(--textColor)]"
+                classNames="items-center gap-1 text-[var(--textColorLight)]"
               >
                 {skill.icon ? (
                   <Image

@@ -3,10 +3,14 @@ type SectionTitleProps = {
   id?: string;
 };
 
-const SectionTitle = ({ children, id }: SectionTitleProps) => {  return (
-    <p className="text-center mx-auto text-3xl/6 md:text-4xl/6 font-bold p-5">
-      {children}
-    </p>
+const SectionTitle = ({ children, id }: SectionTitleProps) => {
+  return (
+    <div className="text-center mx-auto mb-10" id={id}>
+      <h2 className="text-3xl md:text-5xl font-semibold tracking-tight">
+        <span className="gradient-text font-display">{children}</span>
+      </h2>
+      <span className="block w-16 h-[3px] bg-[var(--primaryColor)] rounded-full mx-auto mt-4 opacity-80" />
+    </div>
   );
 };
 

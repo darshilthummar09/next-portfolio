@@ -1,6 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 
-const ContactButton = ({ text, icon, url, className }: any) => {
+const ContactButton = ({ text, icon, iconImage, url, className }: any) => {
   return (
     <Link
       className={className}
@@ -20,8 +21,18 @@ const ContactButton = ({ text, icon, url, className }: any) => {
           <FontAwesomeIcon icon={icon} />
         )}
       </span> */}
+      {iconImage ? (
+        <Image
+          src={iconImage}
+          alt={`${text} logo`}
+          width={24}
+          height={24}
+          className="w-6 h-6 object-contain"
+        />
+      ) : icon ? (
         <i className={icon} />
-      <p className="text-lg/6 font-semibold text-[var(--textColor)]">{text}</p>
+      ) : null}
+      <p className="text-base font-semibold text-[var(--textColor)]">{text}</p>
     </Link>
   );
 };

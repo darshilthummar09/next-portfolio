@@ -31,6 +31,13 @@
       url: Strings.facebookLink,
       icon: Strings.facebookIcon,
       text: Strings.facebookUsername,
+    },
+    {
+      name: Strings.upwork,
+      url: Strings.upworkLink,
+      icon: Strings.upworkIcon,
+      iconImage: Strings.upworkIconImage,
+      text: Strings.upworkUsername,
     }
   ];
   

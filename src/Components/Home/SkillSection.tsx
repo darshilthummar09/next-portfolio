@@ -8,13 +8,13 @@ import skills from "../../data/skills";
 const SkillSection = ({ id }: { id: string }) => {
   return (
     <ResponsiveBox
-      classNames="dark:bg-[var(--dialogColor)] bg-[var(--dialogColor)] min-h-screen items-center justify-center dark:bg-dot-white/[0.15] bg-dot-white/[0.15] lg:px-40"
+      classNames="section-shell min-h-screen items-center justify-center lg:px-32"
       id={id}
     >
-      <ConstrainedBox classNames="px-4 py-16">
+      <ConstrainedBox classNames="px-4 py-20 relative z-10">
         <SectionTitle>Skills</SectionTitle>
 
-        <GridBox classNames="justify-items-center grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 md:grid-cols-2 mt-16">
+        <GridBox classNames="justify-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
           {skills.map((skill, index) => {
             return <SkillCard key={`skill-${index}`} data={skill} />;
           })}
