@@ -25,9 +25,8 @@ const ExperienceItem = ({ data }: { data: IExperienceItem }) => {
         {data.description.map((desc: string, i: number) => (
           <div
             key={i}
-            className="flex items-start gap-2"
+            className="flex items-start"
           >
-            <span className="w-3 h-3 mt-2 bg-gradient-to-r from-[var(--primaryColor)] to-blue-500 rounded-full shadow-md"></span>
             <p className="text-white font-light leading-relaxed">
               {desc}
             </p>
