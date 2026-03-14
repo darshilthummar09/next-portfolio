@@ -10,28 +10,27 @@ const ExperienceItem = ({ data }: { data: IExperienceItem }) => {
         </div>
         <div>
           <p className="text-2xl font-extrabold text-white tracking-wide">
-            {data.designation}
+            {data.position}
           </p>
           <p className=" font-extrabold text-white text-sm font-medium">
             @ {data.company}
           </p>
           <p className="text-white text-sm font-medium italic">
-            {data.location} | {data.startDate} - {data.isCurrentJob== true && "Present"}
+            {data.location} | {data.startDate} - {data.endDate || (data.isCurrentJob ? "Present" : "")}
           </p>
         </div>
       </div>
 
       <div className="w-full flex flex-col gap-6 mt-6">
-        {data.description.map((desc: string, i: number) => (
-          <div
-            key={i}
-            className="flex items-start"
-          >
-            <p className="text-white font-light leading-relaxed">
-              {desc}
-            </p>
-          </div>
-        ))}
+        {Array.isArray(data.description) ? (
+          data.description.map((desc: string, i: number) => (
+            <div key={i} className="flex items-start">
+              <p className="text-white font-light leading-relaxed">{desc}</p>
+            </div>
+          ))
+        ) : (
+          <p className="text-white font-light leading-relaxed">{data.description}</p>
+        )}
       </div>
     </div>
   );

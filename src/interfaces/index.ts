@@ -27,9 +27,10 @@ export interface INavItem {
 export interface IExperienceItem {
   company: string;
   position: string;
-  startDate: string; 
-  endDate: string;
-  description: string;
+  startDate: string;
+  endDate?: string;
+  isCurrentJob?: boolean;
+  description: string | string[];
   location?: string;
   companyLogo?: string;
   companyLink?: string;
