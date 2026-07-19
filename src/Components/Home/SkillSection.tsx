@@ -8,10 +8,10 @@ import skills from "../../data/skills";
 const SkillSection = ({ id }: { id: string }) => {
   return (
     <ResponsiveBox
-      classNames="section-shell min-h-screen items-center justify-center lg:px-32"
+      classNames="section-shell min-h-screen items-center justify-center lg:px-3"
       id={id}
     >
-      <ConstrainedBox classNames="px-4 py-20 relative z-10">
+      <ConstrainedBox classNames="px-4 py-2 relative z-10">
         <SectionTitle>Skills</SectionTitle>
 
         <GridBox classNames="justify-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">

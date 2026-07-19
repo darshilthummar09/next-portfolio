@@ -25,7 +25,7 @@ const HomeSection = ({ id }: Readonly<{ id: string }>) => {
       classNames="section-shell min-h-screen items-center justify-center relative overflow-hidden"
       id={id}
     >
-      <ConstrainedBox classNames="px-4 py-20 lg:py-28 relative z-10">
+      <ConstrainedBox classNames="px-4 py-2 lg:py-20 relative z-10">
         <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 items-center">
           <div className="flex flex-col gap-6">
             <span className="pill w-fit">Available for collaboration</span>

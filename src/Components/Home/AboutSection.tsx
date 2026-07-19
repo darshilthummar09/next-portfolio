@@ -19,10 +19,10 @@ const techStack = [
 const AboutSection = ({ id }: { id: string }) => {
   return (
     <ResponsiveBox
-      classNames="section-shell items-center justify-center lg:px-32"
+      classNames="section-shell items-center justify-center lg:px-3"
       id={id}
     >
-      <ConstrainedBox classNames="py-20 relative z-10">
+      <ConstrainedBox classNames="py-2 relative z-10">
         <SectionTitle>About me</SectionTitle>
 
         <section className="grid lg:grid-cols-[1.05fr_0.95fr] gap-6">

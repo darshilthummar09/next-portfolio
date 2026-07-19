@@ -22,7 +22,7 @@ const ExperienceCard = ({ data }: ExperienceCardProps) => {
             viewport={{ amount: 0.3 }}
             className="relative"
           >
-            <span className="absolute -left-[9px] top-6 h-4 w-4 rounded-full bg-[var(--primaryColor)] shadow-[0_0_0_6px_rgba(244,184,74,0.15)]" />
+            <span className="absolute -left-[3.5%] top-6 h-4 w-4 rounded-full bg-[var(--primaryColor)] shadow-[0_0_0_6px_rgba(244,184,74,0.15)]" />
             <div className="section-surface p-6 md:p-7">
               <div className="flex flex-col sm:flex-row items-start gap-4">
                 {item.companyLink ? (

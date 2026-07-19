@@ -146,8 +146,8 @@ export interface IEducationItem {
   startDate: string;
   endDate?: string;
   location: string;
-  cgpa?: string;
-  percentage?: string;
+  // cgpa?: string;
+  // percentage?: string;
 }
 
 

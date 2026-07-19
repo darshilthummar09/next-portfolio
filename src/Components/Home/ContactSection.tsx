@@ -9,10 +9,10 @@ import socialLinks from "../../data/importantLinks";
 const HomeSection6 = ({ id }: { id: string }) => {
   return (
     <ResponsiveBox
-      classNames="section-shell min-h-screen items-center justify-center lg:px-32"
+      classNames="section-shell min-h-screen items-center justify-center lg:px-3"
       id={id}
     >
-      <ConstrainedBox classNames="px-4 py-20 relative z-10">
+      <ConstrainedBox classNames="px-4 py-2 relative z-10">
         <SectionTitle>Get in touch</SectionTitle>
 
         <Column classNames="mt-10 w-full section-surface p-8">

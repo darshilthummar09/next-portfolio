@@ -30,12 +30,12 @@ const Education = ({ data }: { data: TimelineEntry }) => {
           <p className="text-xs text-[var(--textColorLight)] mt-1">
             {item.location}
           </p>
-          <div className="mt-3 inline-flex items-center gap-2 rounded-full border border-white/10 px-3 py-1 text-xs text-[var(--textColorLight)]">
+          {/* <div className="mt-3 inline-flex items-center gap-2 rounded-full border border-white/10 px-3 py-1 text-xs text-[var(--textColorLight)]">
             {item?.cgpa ? "CGPA" : "Percentage"}:{" "}
             <span className="text-[var(--textColor)]">
               {item?.cgpa ? item.cgpa : item.percentage}
             </span>
-          </div>
+          </div> */}
         </motion.div>
       ))}
     </div>
