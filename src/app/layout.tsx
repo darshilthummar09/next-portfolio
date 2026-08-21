@@ -1,18 +1,29 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Fraunces } from "next/font/google";
+import { Outfit, Cinzel, Syne, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/Components/UI/Header";
 import ScrollToTop from "@/Components/common/ScrollToTop";
 import { navMenus } from "../data/navItems";
 import Footer from "@/Components/UI/Footer";
+import MotionProvider from "@/Components/common/MotionProvider";
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
 });
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+const cinzel = Cinzel({
+  variable: "--font-cinzel",
+  subsets: ["latin"],
+});
+
+const syne = Syne({
+  variable: "--font-syne",
+  subsets: ["latin"],
+});
+
+const jetbrains = JetBrains_Mono({
+  variable: "--font-jetbrains",
   subsets: ["latin"],
 });
 
@@ -131,7 +142,9 @@ export const metadata: Metadata = {
     ],
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [{ url: "/dt-mark-favicon.svg", type: "image/svg+xml" }],
+    shortcut: "/dt-mark-favicon.svg",
+    apple: "/dt-mark-favicon.svg",
   },
 };
 
@@ -145,32 +158,14 @@ export default function RootLayout({
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="./favicon.ico" id="dynamic-favicon" />
+        <link rel="icon" type="image/svg+xml" href="/dt-mark-favicon.svg" />
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
         />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-                const favicon = document.getElementById('dynamic-favicon');
-                if (!favicon) return;
-                if (/android/i.test(userAgent)) {
-                  favicon.href = './android-chrome-192x192.png';
-                } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                  favicon.href = '/apple-touch-icon.png';
-                } else {
-                  favicon.href = '/favicon.ico';
-                }
-              })();
-            `,
-          }}
-        />
       </head>
       <body
-        className={`${spaceGrotesk.variable} ${fraunces.variable} antialiased`}
+        className={`${outfit.variable} ${cinzel.variable} ${syne.variable} ${jetbrains.variable} antialiased selection:bg-[#D4AF37] selection:text-black`}
       >
         <script
           type="application/ld+json"
@@ -203,10 +198,12 @@ export default function RootLayout({
           }}
         />
 
-        <div className="lg:px-10">{children}</div>
-        <Header className="app_nav" navItems={navMenus} />
-        <Footer />
-        <ScrollToTop />
+        <MotionProvider>
+          <div className="lg:px-10">{children}</div>
+          <Header className="app_nav" navItems={navMenus} />
+          <Footer />
+          <ScrollToTop />
+        </MotionProvider>
       </body>
     </html>
   );

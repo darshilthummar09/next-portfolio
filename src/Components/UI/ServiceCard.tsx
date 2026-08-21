@@ -92,6 +92,9 @@ const IconSkeleton = ({ item }: Readonly<{ item: IServiceItem }>) => {
   );
 };
 
+import { useRef, MouseEvent } from "react";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+
 export const Card = ({
   className,
   children,
@@ -99,17 +102,47 @@ export const Card = ({
   className?: string;
   children: React.ReactNode;
 }) => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [10, -10]), { damping: 20, stiffness: 100 });
+  const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-10, 10]), { damping: 20, stiffness: 100 });
+
+  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
+    if (!ref.current) return;
+    const rect = ref.current.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    const mouseXPos = e.clientX - rect.left;
+    const mouseYPos = e.clientY - rect.top;
+    const xPct = mouseXPos / width - 0.5;
+    const yPct = mouseYPos / height - 0.5;
+    mouseX.set(xPct);
+    mouseY.set(yPct);
+  };
+
+  const handleMouseLeave = () => {
+    mouseX.set(0);
+    mouseY.set(0);
+  };
+
   return (
-    <div
+    <motion.div
+      ref={ref}
+      style={{ rotateX, rotateY }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
       className={cn(
-        "relative w-full h-full mx-auto overflow-hidden rounded-[var(--borderRadius)] border border-white/10 bg-[rgba(12,16,26,0.65)] shadow-[0_20px_40px_rgba(4,8,16,0.35)] group hover:translate-y-[-4px] transition duration-300",
+        "relative w-full h-full mx-auto overflow-hidden rounded-[var(--borderRadius)] border border-white/10 bg-[rgba(12,16,26,0.65)] shadow-[0_20px_40px_rgba(4,8,16,0.35)] group transition duration-300 transform-style-3d perspective-1200",
         className
       )}
     >
-      <div className="relative z-50">
+      <div className="relative z-50 preserve-3d" style={{ transform: "translateZ(30px)" }}>
         <div className="p-4">{children}</div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

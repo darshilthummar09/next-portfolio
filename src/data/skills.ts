@@ -54,6 +54,41 @@ const skills: ISkillListItem[] = [
         level: SkillLevel.Expert,
         icon: "/skills/redux.svg",
       },
+      {
+        title: "Tailwind CSS",
+        level: SkillLevel.Expert,
+        icon: "/skills/tailwind.svg",
+      },
+    ],
+  },
+  {
+    title: "AI & Agentic Development",
+    items: [
+      {
+        title: "AI Agents",
+        level: SkillLevel.Intermediate,
+        icon: "/skills/ai-agents.svg",
+      },
+      {
+        title: "Sub-Agents",
+        level: SkillLevel.Intermediate,
+        icon: "/skills/sub-agents.svg",
+      },
+      {
+        title: "Claude Skills",
+        level: SkillLevel.Intermediate,
+        icon: "/skills/claude-skills.svg",
+      },
+      {
+        title: "MCP",
+        level: SkillLevel.Intermediate,
+        icon: "/skills/mcp.svg",
+      },
+      {
+        title: "Tool Use",
+        level: SkillLevel.Intermediate,
+        icon: "/skills/tool-use.svg",
+      },
     ],
   },
   {
@@ -73,6 +108,11 @@ const skills: ISkillListItem[] = [
         title: "Socket.io",
         level: SkillLevel.Intermediate,
         icon: "/skills/socket-io.png",
+      },
+      {
+        title: "CodeIgniter",
+        level: SkillLevel.Intermediate,
+        icon: "/skills/codeigniter.svg",
       },
       // {
       //   title: "Nest.js",
@@ -114,21 +154,26 @@ const skills: ISkillListItem[] = [
         level: SkillLevel.Beginner,
         icon: "/skills/mysql.svg",
       },
+      {
+        title: "Supabase",
+        level: SkillLevel.Intermediate,
+        icon: "/skills/supabase.svg",
+      },
     ],
   },
   {
-    title: "DevOps/VCS",
+    title: "Cloud & Automation",
     items: [
-      // {
-      //   title: "Docker",
-      //   level: SkillLevel.Beginner,
-      //   icon: "/skills/docker.png",
-      // },
-      // {
-      //   title: "AWS",
-      //   level: SkillLevel.Intermediate,
-      //   icon: "/skills/aws.svg",
-      // },
+      {
+        title: "AWS",
+        level: SkillLevel.Intermediate,
+        icon: "/skills/aws.svg",
+      },
+      {
+        title: "n8n",
+        level: SkillLevel.Intermediate,
+        icon: "/skills/n8n.svg",
+      },
       {
         title: "Git",
         level: SkillLevel.Expert,

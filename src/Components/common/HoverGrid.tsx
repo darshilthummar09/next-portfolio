@@ -1,7 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { cn } from "@/utils/cn";
 import { ServiceCard } from "../UI/ServiceCard";
 
@@ -12,41 +11,25 @@ export const HoverGrid = ({
   cards: any[];
   className?: string;
 }) => {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
   return (
     <div
       className={cn(
-        "w-full grid grid-cols-1 md:grid-cols-2 mt-16 gap-4",
+        "w-full grid grid-cols-1 md:grid-cols-2 mt-4 gap-4",
         className
       )}
     >
       {cards.map((item, idx) => (
-        <div
+        <motion.div
           key={item?.id}
-          className="relative group  block p-2 h-full w-full"
-          onMouseEnter={() => setHoveredIndex(idx)}
-          onMouseLeave={() => setHoveredIndex(null)}
+          initial={{ opacity: 0, y: 30, rotateX: -14 }}
+          whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+          transition={{ duration: 0.6, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true, margin: "-100px" }}
+          style={{ transformPerspective: 1000 }}
+          className="relative group block p-2 h-full w-full"
         >
-          {/* <AnimatePresence>
-            {hoveredIndex === idx && (
-              <motion.span
-                className="absolute inset-0 h-full w-full bg-slate-800/[0.5] dark:bg-slate-800/[0.5] block rounded-[var(--borderRadius)]"
-                layoutId="hoverBackground"
-                initial={{ opacity: 0 }}
-                animate={{
-                  opacity: 1,
-                  transition: { duration: 0.15 },
-                }}
-                exit={{
-                  opacity: 0,
-                  transition: { duration: 0.15, delay: 0.2 },
-                }}
-              />
-            )}
-          </AnimatePresence> */}
           <ServiceCard item={item} />
-        </div>
+        </motion.div>
       ))}
     </div>
   );

@@ -7,17 +7,19 @@ import services from "@/data/services";
 const HomeSection2 = ({ id }: { id: string }) => {
   return (
     <ResponsiveBox
-      classNames="section-shell min-h-screen items-center justify-center lg:px-3"
+      classNames="flex flex-col items-center justify-center section-padding relative bg-[var(--background)]"
       id={id}
     >
-      <ConstrainedBox classNames="px-4 py-2 relative z-10">
-        <SectionTitle>Services</SectionTitle>
-        <p className="text-center text-[var(--textColorLight)] max-w-2xl mx-auto">
-          I design and build full stack solutions that move quickly from
-          strategy to execution, with a focus on clean UI and reliable backend
-          systems.
-        </p>
-        <HoverGrid cards={services} className="mt-12" />
+      <ConstrainedBox classNames="relative z-10 w-full">
+        <div className="mb-8">
+          <SectionTitle>Services</SectionTitle>
+          <p className="mt-3 text-[var(--textColorLight)] text-lg max-w-2xl font-light leading-relaxed">
+            I design and build full stack solutions that move quickly from
+            strategy to execution, with a focus on clean UI and reliable backend
+            systems.
+          </p>
+        </div>
+        <HoverGrid cards={services} />
       </ConstrainedBox>
     </ResponsiveBox>
   );

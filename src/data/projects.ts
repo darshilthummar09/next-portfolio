@@ -1,41 +1,43 @@
-// import { IProjectItem, ProjectType, RepoType } from "@/interfaces";
+import { IProjectItem, ProjectType, RepoType } from "@/interfaces";
 
-// const projects: IProjectItem[] = [
-//   {
-//     id: "E-commerce Website",
-//     title: "E-commerce Website",
-//     description:
-//       "Our E-commerce site provides a smooth shopping experience, featuring easy user authentication, detailed plant descriptions, and a robust search function. With secure payment integration and informative pages, we aim to offer convenience and satisfaction to our customers.",
-//     icon: "/skills/react.svg",
-//     repoType: RepoType.Public,
-//     projectType: ProjectType.Personal,
-//     githubUrl: "https://github.com/Utkarsh-Sorathia/Kachnaar",
-//     url: "https://kachnaar.netlify.app/",
-//     tags: ["React", "Firebase", "Redux-Toolkit", "Bootstrap", "Razorpay"],
-//   },
-//   {
-//     id: "Project Management Website",
-//     title: "Project Management Website",
-//     description:
-//       "Our project management platform streamlines collaboration with user authentication, detailed project pages, and progress tracking dashboards. The comments section fosters effective teamwork, ensuring successful project delivery.",
-//     icon: "/skills/react.svg",
-//     repoType: RepoType.Public,
-//     projectType: ProjectType.Personal,
-//     githubUrl: "https://github.com/Utkarsh-Sorathia/Project-Management",
-//     url: "https://utkarsh-project-management.netlify.app/",
-//     tags: ["React.js", "Redux", "Bootstrap", "Firebase"],
-//   },
-//   {
-//     id: "My Portfolio Website",
-//     title: "My Portfolio Website",
-//     description:
-//       "My portfolio website showcases my expertise in React.js, Bootstrap, and Firebase, providing a comprehensive and visually appealing platform for showcasing my skills and projects.",
-//     icon: "/skills/react.svg",
-//     repoType: RepoType.Public,
-//     projectType: ProjectType.Personal,
-//     githubUrl: "https://github.com/Utkarsh-Sorathia/Portfolio-Utkarsh",
-//     url: "https://utkarsh-sorathia.netlify.app/",
-//     tags: ["React.js", "Bootstrap", "Formspree"],
-//   },
-// ];
-// export default projects;
+const projects: IProjectItem[] = [
+  {
+    id: "Spring E-commerce Marketplace",
+    title: "Spring - E-commerce Marketplace",
+    description:
+      "A full-stack, multi-seller e-commerce marketplace where sellers can list products across categories while customers browse, wishlist, place orders, and track them in real time. Built with dynamic stock management and data-rich dashboards for both sellers and customers.",
+    icon: "/skills/react.svg",
+    screenshots: ["/projects/spring-ecommerce.png"],
+    repoType: RepoType.Public,
+    projectType: ProjectType.Personal,
+    githubUrl: "https://github.com/darshilthummar09/supabase-e-commerce",
+    tags: ["React", "Vite", "Supabase", "Clerk", "Tailwind CSS"],
+  },
+  {
+    id: "Donet Task Manager",
+    title: "Donet - Task Management App",
+    description:
+      "A full-stack task management application for creating, organizing, and tracking tasks, with data stored securely in the cloud via Supabase. Inspired by tools like Trello and Asana, built from scratch to explore modern full-stack patterns.",
+    icon: "/skills/supabase.svg",
+    screenshots: ["/projects/donet-task-manager.png"],
+    repoType: RepoType.Public,
+    projectType: ProjectType.Personal,
+    githubUrl: "https://github.com/darshilthummar09/donet-supabase",
+    tags: ["React", "TypeScript", "Supabase"],
+  },
+  {
+    id: "TDAgames",
+    title: "TDAgames - Free Online Games",
+    description:
+      "A free online games portal hosting a curated library of browser-based games behind a shared site shell (navigation, ad integration, and per-game pages), deployed as a static site on GitHub Pages.",
+    icon: "/skills/javascript.svg",
+    screenshots: ["/projects/tdagames.jpg"],
+    repoType: RepoType.Public,
+    projectType: ProjectType.Personal,
+    githubUrl: "https://github.com/darshilthummar09/tdagames.github.io",
+    url: "https://tdagames.github.io/",
+    tags: ["JavaScript", "HTML", "CSS"],
+  },
+];
+
+export default projects;

@@ -1,104 +1,121 @@
-// 'use client'
+"use client";
 
-// import { useEffect, useRef, useState } from 'react'
-// import { IProjectItem } from '@/interfaces'
-// import ProjectCard from './ProjectCard'
+import { useRef, useState, useEffect } from "react";
+import { motion, useScroll, useTransform, useSpring, MotionValue } from "framer-motion";
+import { IProjectItem } from "@/interfaces";
+import ProjectCard from "./ProjectCard";
 
-// const ProjectList = ({ projects }: Readonly<{ projects: IProjectItem[] }>) => {
-//   const carouselRef = useRef<HTMLDivElement>(null)
-//   const [activeIndex, setActiveIndex] = useState(0)
+const RECEDE_Y = -22; // px shift per stacked-behind level
+const RECEDE_SCALE = 0.05; // scale reduction per stacked-behind level
+const RECEDE_Z = 55; // translateZ reduction per stacked-behind level
+const OFFSET_Y = 900; // px a card waits below the stage before its own entrance (clears the tallest — mobile — stage)
 
-//   const scrollByOffset = (offset: number) => {
-//     if (carouselRef.current) {
-//       carouselRef.current.scrollBy({ left: offset, behavior: 'smooth' })
-//     }
-//   }
+const StackedCard = ({
+  project,
+  index,
+  total,
+  progress,
+  reduceTilt,
+}: {
+  project: IProjectItem;
+  index: number;
+  total: number;
+  progress: MotionValue<number>;
+  reduceTilt: boolean;
+}) => {
+  // Domain [0,1] split into `total` equal segments: segment i is the arrival of card i+1
+  // (except the final segment, which is a pure hold/exit — no new arrival).
+  const points = Array.from({ length: total + 1 }, (_, i) => i / total);
+  const maxDepth = total - 1 - index; // how many cards can ever stack on top of this one
 
-//   const scrollToIndex = (index: number) => {
-//     if (carouselRef.current) {
-//       const cardWidth = carouselRef.current.offsetWidth
-//       carouselRef.current.scrollTo({
-//         left: index * cardWidth,
-//         behavior: 'smooth',
-//       })
-//     }
-//   }
+  const yVals: number[] = [];
+  const scaleVals: number[] = [];
+  const zVals: number[] = [];
+  const rotateVals: number[] = [];
+  const opacityVals: number[] = [];
 
-//   // Track which card is visible
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       if (!carouselRef.current) return
+  points.forEach((_, i) => {
+    if (i < index) {
+      // Waiting below the stage — not yet arrived.
+      yVals.push(OFFSET_Y);
+      scaleVals.push(0.95);
+      zVals.push(-160);
+      rotateVals.push(-6);
+      opacityVals.push(1);
+    } else {
+      const depth = Math.min(i - index, maxDepth);
+      yVals.push(depth * RECEDE_Y);
+      scaleVals.push(1 - depth * RECEDE_SCALE);
+      zVals.push(30 - depth * RECEDE_Z);
+      rotateVals.push(depth === 0 ? 0 : Math.min(depth * 2, 6));
+      opacityVals.push(depth === 0 ? 1 : Math.max(1 - depth * 0.1, 0.65));
+    }
+  });
 
-//       const scrollLeft = carouselRef.current.scrollLeft
-//       const containerWidth = carouselRef.current.offsetWidth
-//       const index = Math.round(scrollLeft / containerWidth)
-//       setActiveIndex(index)
-//     }
+  const y = useTransform(progress, points, yVals);
+  const scale = useTransform(progress, points, scaleVals);
+  const translateZ = useTransform(progress, points, zVals);
+  const rotateX = useTransform(progress, points, rotateVals);
+  const opacity = useTransform(progress, points, opacityVals);
 
-//     const ref = carouselRef.current
-//     if (ref) {
-//       ref.addEventListener('scroll', handleScroll)
-//     }
+  return (
+    <motion.div
+      style={{
+        y,
+        scale,
+        translateZ,
+        rotateX: reduceTilt ? 0 : rotateX,
+        opacity,
+        zIndex: index + 1,
+      }}
+      className="absolute inset-0 preserve-3d"
+    >
+      <ProjectCard project={project} index={index} />
+    </motion.div>
+  );
+};
 
-//     return () => {
-//       if (ref) {
-//         ref.removeEventListener('scroll', handleScroll)
-//       }
-//     }
-//   }, [])
+const ProjectList = ({ projects }: Readonly<{ projects: IProjectItem[] }>) => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [reduceTilt, setReduceTilt] = useState(false);
+  const total = projects.length;
 
-//   return (
-//     <div className="w-full mt-16 flex flex-col items-center gap-4 px-4">
-//       {/* Main Carousel Row */}
-//       <div className="w-full flex items-center gap-4">
-//         {/* Prev Button - Desktop only */}
-//         <button
-//           onClick={() => scrollByOffset(-400)}
-//           aria-label="Scroll to previous project"
-//           className="hidden sm:flex items-center justify-center app__filled_btn w-12 h-12 rounded-full bg-[#4361ee] text-white hover:bg-[#3a54d4] active:scale-95 transition-transform duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#4361ee]"
-//         >
-//           <i className="bi bi-chevron-left text-xl" />
-//         </button>
+  useEffect(() => {
+    setReduceTilt(window.matchMedia("(max-width: 767px)").matches);
+  }, []);
 
-//         {/* Carousel */}
-//         <div
-//           ref={carouselRef}
-//           className="flex gap-4 overflow-x-auto scroll-smooth flex-1 no-scrollbar touch-auto snap-x snap-mandatory"
-//         >
-//           {projects.map((item, index) => (
-//             <div
-//               key={`project-${index}`}
-//               className="snap-start flex-shrink-0 w-full sm:w-auto"
-//             >
-//               <ProjectCard project={item} />
-//             </div>
-//           ))}
-//         </div>
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end end"],
+  });
 
-//         {/* Next Button - Desktop only */}
-//         <button
-//           onClick={() => scrollByOffset(400)}
-//           aria-label="Scroll to next project"
-//           className="hidden sm:flex items-center justify-center app__filled_btn w-12 h-12 rounded-full bg-[#4361ee] text-white hover:bg-[#3a54d4] active:scale-95 transition-transform duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#4361ee]"
-//         >
-//           <i className="bi bi-chevron-right text-xl" />
-//         </button>
-//       </div>
+  const progress = useSpring(scrollYProgress, { stiffness: 300, damping: 40, mass: 0.6 });
 
-//       {/* Dot Indicators - Only on mobile */}
-//       <div className="flex sm:hidden items-center justify-center gap-2 mt-2">
-//         {projects.map((_, index) => (
-//           <button
-//             key={index}
-//             onClick={() => scrollToIndex(index)}
-//             className={`h-2 w-2 rounded-full transition-all duration-300 ${
-//               index === activeIndex ? 'bg-[#4361ee]' : 'bg-gray-300'
-//             }`}
-//           />
-//         ))}
-//       </div>
-//     </div>
-//   )
-// }
+  // One screen to settle on the first card, ~0.9 screens per additional card's
+  // entrance, plus a comfortable hold before the section releases to normal scroll.
+  const sectionHeight = `${100 + (total - 1) * 90 + 50}vh`;
 
-// export default ProjectList
+  return (
+    <div ref={sectionRef} className="relative" style={{ height: sectionHeight }}>
+      <div className="sticky top-20 lg:top-28 w-full px-4">
+        <div
+          className="relative w-full max-w-[min(92vw,1100px)] mx-auto h-[420px] sm:h-[460px] lg:h-[520px] preserve-3d"
+          style={{ perspective: 1400 }}
+        >
+          {projects.map((project, index) => (
+            <StackedCard
+              key={index}
+              project={project}
+              index={index}
+              total={total}
+              progress={progress}
+              reduceTilt={reduceTilt}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ProjectList;

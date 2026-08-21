@@ -26,11 +26,11 @@ export const navMenus: INavItem[] = [
     link: "/#skills",
     icon: "bi bi-award-fill",
   },
-  // {
-  //   name: "Projects",
-  //   link: "/#projects",
-  //   icon: "bi bi-code-square",
-  // },
+  {
+    name: "Projects",
+    link: "/#projects",
+    icon: "bi bi-code-square",
+  },
   {
     name: "Contact",
     link: "/#contact",

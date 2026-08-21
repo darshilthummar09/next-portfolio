@@ -8,15 +8,17 @@ import skills from "../../data/skills";
 const SkillSection = ({ id }: { id: string }) => {
   return (
     <ResponsiveBox
-      classNames="section-shell min-h-screen items-center justify-center lg:px-3"
+      classNames="flex flex-col items-center justify-center section-padding relative bg-[var(--background)]"
       id={id}
     >
-      <ConstrainedBox classNames="px-4 py-2 relative z-10">
-        <SectionTitle>Skills</SectionTitle>
+      <ConstrainedBox classNames="relative z-10 w-full">
+        <div className="mb-8">
+          <SectionTitle>Technical Arsenal</SectionTitle>
+        </div>
 
-        <GridBox classNames="justify-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+        <GridBox classNames="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
           {skills.map((skill, index) => {
-            return <SkillCard key={`skill-${index}`} data={skill} />;
+            return <SkillCard key={`skill-${index}`} data={skill} index={index} />;
           })}
         </GridBox>
       </ConstrainedBox>

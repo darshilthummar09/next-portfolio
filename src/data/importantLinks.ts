@@ -15,22 +15,10 @@
       text: Strings.linkedInUsername,
     },
     {
-      name: Strings.instagram,
-      url: Strings.instagramLink,
-      icon: Strings.instagramIcon,
-      text: Strings.instagramUsername,
-    },
-    {
       name: Strings.twitter,
       url: Strings.twitterLink,
       icon: Strings.twitterIcon,
       text: Strings.twitterUsername,
-    },
-    {
-      name: Strings.facebook,
-      url: Strings.facebookLink,
-      icon: Strings.facebookIcon,
-      text: Strings.facebookUsername,
     },
     {
       name: Strings.upwork,

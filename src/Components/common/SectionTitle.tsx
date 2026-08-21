@@ -5,7 +5,7 @@ type SectionTitleProps = {
 
 const SectionTitle = ({ children, id }: SectionTitleProps) => {
   return (
-    <div className="text-center mx-auto mb-10" id={id}>
+    <div className="text-center mx-auto" id={id}>
       <h2 className="text-3xl md:text-5xl font-semibold tracking-tight">
         <span className="gradient-text font-display">{children}</span>
       </h2>

@@ -1,22 +1,28 @@
-// import ConstrainedBox from "../core/constrained-box";
-// import ResponsiveBox from "../core/ResponsiveBox";
-// import SectionTitle from "../common/SectionTitle";
-// import ProjectCard from "../UI/ProjectList";
-// import projects from "@/data/projects";
+"use client";
 
-// const ProjectSection = ({ id }: { id: string }) => {
-//   return (
-//     <ResponsiveBox
-//       classNames="dark:bg-[var(--bgColor)] bg-[var(--bgColor)] dark:bg-grid-white/[0.1] bg-grid-white/[0.1] min-h-screen items-center justify-center lg:px-40"
-//       id={id}
-//     >
-//       <ConstrainedBox classNames="px-2 py-16">
-//         <SectionTitle>Projects/Recent Works</SectionTitle>
+import ConstrainedBox from "../core/constrained-box";
+import ResponsiveBox from "../core/ResponsiveBox";
+import SectionTitle from "../common/SectionTitle";
+import ProjectList from "../UI/ProjectList";
+import projects from "@/data/projects";
 
-//         <ProjectCard projects={projects} />
-//       </ConstrainedBox>
-//     </ResponsiveBox>
-//   );
-// };
+const ProjectSection = ({ id }: { id: string }) => {
+  return (
+    <ResponsiveBox
+      classNames="flex flex-col items-center justify-center section-padding relative bg-[var(--background)]"
+      id={id}
+      allowOverflow
+    >
+      <ConstrainedBox classNames="px-4 w-full relative z-10" allowOverflow>
+        <div className="mb-8 text-center">
+          <p className="font-mono text-sm text-[var(--primaryColor)] uppercase tracking-[0.3em] mb-3">Selected Work</p>
+          <SectionTitle>Featured Projects</SectionTitle>
+        </div>
 
-// export default ProjectSection;
+        <ProjectList projects={projects} />
+      </ConstrainedBox>
+    </ResponsiveBox>
+  );
+};
+
+export default ProjectSection;

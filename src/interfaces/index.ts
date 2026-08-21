@@ -122,6 +122,9 @@ export interface CoreComponentsProps {
   onClick?: MouseEventHandler<HTMLDivElement>;
   id?: string;
   elementRef?: RefObject<HTMLDivElement | null>;
+  /** Set true to keep overflow visible — required for any descendant using `position: sticky`,
+   * since an `overflow-hidden` ancestor breaks sticky positioning against the real viewport. */
+  allowOverflow?: boolean;
 }
 
 export interface ViewportProps {

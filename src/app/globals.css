@@ -1,40 +1,30 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0b0d12;
-  --foreground: #f7f8fb;
-  --bgColor: #0b0d12;
-  --dialogColor: rgba(14, 18, 28, 0.82);
-  --dialogColor50: rgba(14, 18, 28, 0.55);
-  --surfaceColor: rgba(17, 23, 35, 0.9);
-  --surfaceBorder: rgba(255, 255, 255, 0.08);
-  --textColor: #f7f8fb;
-  --textColorLight: #b8c0cf;
-  --textColor50: rgba(247, 248, 251, 0.5);
-  --primaryColor: #f4b84a;
-  --secondaryColor: #58d1c8;
-  --primaryColor5: rgba(244, 184, 74, 0.05);
-  --primaryColor10: rgba(244, 184, 74, 0.1);
-  --primaryColor20: rgba(244, 184, 74, 0.2);
-  --primaryColor30: rgba(244, 184, 74, 0.3);
-  --primaryColor40: rgba(244, 184, 74, 0.4);
-  --primaryColor50: rgba(244, 184, 74, 0.5);
-  --primaryColor60: rgba(244, 184, 74, 0.6);
-  --primaryColor70: rgba(244, 184, 74, 0.7);
-  --primaryColor80: rgba(244, 184, 74, 0.8);
-  --primaryColor90: rgba(244, 184, 74, 0.9);
-  --primaryColor100: #f4b84a;
-  --bgColor70: rgba(18, 24, 36, 0.7);
-  --bgColor100: rgba(18, 24, 36, 1);
-  --borderRadius: 22px;
+  --background: #050505;
+  --foreground: #F5F5F0;
+  --bgColor: #050505;
+  --surfaceColor: rgba(20, 20, 20, 0.8);
+  --surfaceBorder: rgba(212, 175, 55, 0.15); /* #D4AF37 at 15% */
+  --textColor: #F5F5F0;
+  --textColorLight: #A3A3A3;
+  --primaryColor: #D4AF37; /* The signature gold */
+  --primaryColorHover: #E6C250;
+  --secondaryColor: #2A2A2A;
+  --borderRadius: 16px;
   --whiteColor: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-space-grotesk);
-  --font-display: var(--font-fraunces);
+  --color-gold: var(--primaryColor);
+  --color-gold-hover: var(--primaryColorHover);
+  
+  --font-sans: var(--font-outfit), var(--font-space-grotesk), sans-serif;
+  --font-display: var(--font-cinzel), serif;
+  --font-accent: var(--font-syne), sans-serif;
+  --font-mono: var(--font-jetbrains), monospace;
 }
 
 * {
@@ -43,88 +33,116 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--background);
+  color: var(--textColor);
 }
 
 body {
   background-color: var(--background);
   color: var(--textColor);
-  font-family: var(--font-space-grotesk), "Space Grotesk", sans-serif;
+  font-family: var(--font-outfit), sans-serif;
   min-height: 100%;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image:
-    radial-gradient(700px circle at 10% 10%, rgba(244, 184, 74, 0.18), transparent 60%),
-    radial-gradient(600px circle at 90% 20%, rgba(88, 209, 200, 0.16), transparent 55%),
-    radial-gradient(900px circle at 50% 80%, rgba(99, 102, 241, 0.08), transparent 65%);
-  pointer-events: none;
-  z-index: -1;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
-  background: rgba(244, 184, 74, 0.35);
-  color: #0b0d12;
+  background: var(--primaryColor);
+  color: #000;
 }
 
+/* Base utility classes for the new design */
 .font-display {
-  font-family: var(--font-fraunces), "Fraunces", serif;
+  font-family: var(--font-cinzel), serif;
 }
 
-.section-shell {
-  position: relative;
+.font-accent {
+  font-family: var(--font-syne), sans-serif;
 }
 
-.section-shell::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 36px 36px;
-  opacity: 0.35;
-  mask-image: radial-gradient(70% 55% at 50% 10%, #000 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
+.font-mono {
+  font-family: var(--font-jetbrains), monospace;
 }
 
-.section-surface {
-  background: var(--surfaceColor);
-  border: 1px solid var(--surfaceBorder);
-  border-radius: var(--borderRadius);
-  backdrop-filter: blur(14px);
-}
-
-.glass-card {
-  background: rgba(12, 16, 26, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: calc(var(--borderRadius) + 4px);
-  box-shadow: 0 24px 48px rgba(4, 8, 16, 0.4);
-  backdrop-filter: blur(16px);
-}
-
-.pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.35rem 0.9rem;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(15, 20, 31, 0.6);
-  font-size: 0.75rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--textColorLight);
-}
-
+.gradient-text-gold,
 .gradient-text {
-  background: linear-gradient(120deg, #f7f8fb 20%, #f4b84a 55%, #58d1c8 90%);
+  background: linear-gradient(135deg, #F5F5F0 0%, #D4AF37 55%, #A8791F 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+.section-padding {
+  padding: 2.75rem 1rem;
+}
+@media (min-width: 768px) {
+  .section-padding {
+    padding: 4rem 2rem;
+  }
+}
+
+.constrained-width {
+  max-width: 1280px;
+  padding-inline: 1.25rem;
+}
+@media (min-width: 768px) {
+  .constrained-width {
+    padding-inline: 2rem;
+  }
+}
+
+.glass-panel {
+  background: rgba(15, 15, 15, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  border-radius: var(--borderRadius);
+}
+
+.section-surface {
+  background: rgba(15, 15, 15, 0.5);
+  backdrop-filter: blur(16px);
+  border-radius: 20px;
+}
+
+/* Fanned icon arc used by ServiceCard */
+.circle-1 { transform: translateY(10px) rotate(-6deg); }
+.circle-2 { transform: translateY(4px) rotate(-3deg); }
+.circle-3 { transform: translateY(-6px); }
+.circle-4 { transform: translateY(4px) rotate(3deg); }
+.circle-5 { transform: translateY(10px) rotate(6deg); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.premium-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  background-color: var(--primaryColor);
+  color: #000;
+  font-family: var(--font-syne), sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+
+.premium-button:hover {
+  background-color: var(--primaryColorHover);
+  transform: translateY(-2px) translateZ(10px);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -133,4 +151,26 @@ body::before {
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* 3D Utility Classes */
+.perspective-1200 {
+  perspective: 1200px;
+}
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Subtle idle breathing for the developer illustration — creates a gentle "alive" feel */
+@keyframes developer-breathe {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-1.5px) scale(1.002); }
+}
+
+.developer-breathe {
+  animation: developer-breathe 4s ease-in-out infinite;
+  will-change: transform;
 }
