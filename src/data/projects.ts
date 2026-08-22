@@ -2,6 +2,19 @@ import { IProjectItem, ProjectType, RepoType } from "@/interfaces";
 
 const projects: IProjectItem[] = [
   {
+    id: "Meridian Real Estate",
+    title: "Meridian — Luxury Real Estate & Architectural Living",
+    description:
+      "An ultra-luxury architectural portfolio and interactive residential atelier featuring cinematic scroll timelapses, real-time 3D massing viewports with Three.js, blueprint wireframe modes, and curated luxury residence showcases.",
+    icon: "/skills/react.svg",
+    screenshots: ["/projects/meridian-real-estate.jpg"],
+    repoType: RepoType.Public,
+    projectType: ProjectType.Personal,
+    githubUrl: "https://github.com/darshilthummar09/meridian-real-estate",
+    url: "https://darshilthummar09.github.io/meridian-real-estate/",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Three.js", "Framer Motion"],
+  },
+  {
     id: "Spring E-commerce Marketplace",
     title: "Spring - E-commerce Marketplace",
     description:
