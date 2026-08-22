@@ -46,8 +46,8 @@ const StackedCard = ({
       const depth = Math.min(i - index, maxDepth);
       yVals.push(depth * RECEDE_Y);
       scaleVals.push(1 - depth * RECEDE_SCALE);
-      zVals.push(30 - depth * RECEDE_Z);
-      rotateVals.push(depth === 0 ? 0 : Math.min(depth * 2, 6));
+      zVals.push(-depth * RECEDE_Z);
+      rotateVals.push(depth === 0 ? 0 : Math.min(depth * 2, 4));
       opacityVals.push(depth === 0 ? 1 : Math.max(1 - depth * 0.1, 0.65));
     }
   });
