@@ -84,27 +84,33 @@ const ProjectCard = ({ project, index }: { project: IProjectItem; index: number 
           </motion.div>
         )}
 
-        <motion.div style={{ translateZ: 40 }} className="flex items-center gap-3 lg:gap-4 mt-auto preserve-3d">
+        <div className="flex items-center gap-3 lg:gap-4 mt-auto relative z-30 pointer-events-auto">
           {project.githubUrl && (
             <Link
               href={project.githubUrl}
               target="_blank"
-              className="flex items-center justify-center w-9 h-9 lg:w-12 lg:h-12 rounded-full border border-white/20 text-white hover:bg-white hover:text-black transition-all duration-300"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="relative z-30 flex items-center justify-center w-9 h-9 lg:w-12 lg:h-12 rounded-full border border-white/20 text-white hover:bg-white hover:text-black transition-all duration-300 cursor-pointer pointer-events-auto shadow-md"
+              aria-label={`${project.title} GitHub repository`}
             >
-              <FontAwesomeIcon icon={faGithub} className="text-base lg:text-xl" />
+              <FontAwesomeIcon icon={faGithub} className="text-base lg:text-xl pointer-events-none" />
             </Link>
           )}
           {project.url && (
             <Link
               href={project.url}
               target="_blank"
-              className="flex items-center gap-2 lg:gap-3 px-4 lg:px-6 h-9 lg:h-12 rounded-full bg-[var(--primaryColor)] text-black font-semibold text-sm lg:text-base hover:bg-[var(--primaryColorHover)] hover:-translate-y-1 transition-all duration-300"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="relative z-30 flex items-center gap-2 lg:gap-3 px-4 lg:px-6 h-9 lg:h-12 rounded-full bg-[var(--primaryColor)] text-black font-semibold text-sm lg:text-base hover:bg-[var(--primaryColorHover)] hover:-translate-y-1 transition-all duration-300 cursor-pointer pointer-events-auto shadow-md"
+              aria-label={`View live demo of ${project.title}`}
             >
-              <span>View Live</span>
-              <FontAwesomeIcon icon={faEye} />
+              <span className="pointer-events-none">View Live</span>
+              <FontAwesomeIcon icon={faEye} className="pointer-events-none" />
             </Link>
           )}
-        </motion.div>
+        </div>
       </div>
 
       {/* Image Section */}

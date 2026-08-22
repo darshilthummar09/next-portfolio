@@ -41,7 +41,7 @@ const StackedCard = ({
       scaleVals.push(0.95);
       zVals.push(-160);
       rotateVals.push(-6);
-      opacityVals.push(1);
+      opacityVals.push(i === index - 1 ? 0.8 : 0);
     } else {
       const depth = Math.min(i - index, maxDepth);
       yVals.push(depth * RECEDE_Y);
@@ -58,6 +58,13 @@ const StackedCard = ({
   const rotateX = useTransform(progress, points, rotateVals);
   const opacity = useTransform(progress, points, opacityVals);
 
+  // Ensure only the active/topmost card accepts pointer events so waiting/covered cards never block clicks
+  const pointerEvents = useTransform(progress, (p) => {
+    const hasArrived = index === 0 ? true : p >= (index - 0.2) / total;
+    const isNotCovered = index === total - 1 ? true : p < (index + 0.9) / total;
+    return hasArrived && isNotCovered ? "auto" : "none";
+  });
+
   return (
     <motion.div
       style={{
@@ -67,6 +74,7 @@ const StackedCard = ({
         rotateX: reduceTilt ? 0 : rotateX,
         opacity,
         zIndex: index + 1,
+        pointerEvents,
       }}
       className="absolute inset-0 preserve-3d"
     >
