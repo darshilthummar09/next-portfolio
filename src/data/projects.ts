@@ -24,6 +24,7 @@ const projects: IProjectItem[] = [
     repoType: RepoType.Public,
     projectType: ProjectType.Personal,
     githubUrl: "https://github.com/darshilthummar09/supabase-e-commerce",
+    url: "https://supabase-e-commerce.vercel.app/",
     tags: ["React", "Vite", "Supabase", "Clerk", "Tailwind CSS"],
   },
   {
